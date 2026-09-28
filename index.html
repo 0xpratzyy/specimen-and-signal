@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Specimen & Signal</title>
+<meta name="description" content="Copy-ready prompts, fonts, tokens and finishing recipes for dark scientific-instrument motion graphics, plus 20 verified Claude Opus 5.5 animations.">
+<meta name="theme-color" content="#0a0a0b">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://specimen-and-signal.vercel.app/">
+<link rel="canonical" href="https://specimen-and-signal.vercel.app/">
+<meta property="og:title" content="Specimen &amp; Signal">
+<meta property="og:description" content="Copy-ready prompts, fonts, tokens and finishing recipes for dark scientific-instrument motion graphics, plus 20 verified Claude Opus 5.5 animations.">
+<meta property="og:image" content="https://specimen-and-signal.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Specimen &amp; Signal">
+<meta name="twitter:description" content="Copy-ready prompts, fonts, tokens and finishing recipes for dark scientific-instrument motion graphics, plus 20 verified Claude Opus 5.5 animations.">
+<meta name="twitter:image" content="https://specimen-and-signal.vercel.app/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0b'/%3E%3Cpath d='M6 6h7M6 6v7M26 26h-7M26 26v-7' stroke='%23ede6da' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23ff5a1f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wdth,wght@75..125,100..800&family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;700&family=Kalam&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0a0a0b; --bg2:#111113; --code:#0f0f11; --ink:#ede6da; --dim:rgba(237,230,218,.66); --mute:rgba(237,230,218,.42);
+  --line:rgba(237,230,218,.15); --grid:rgba(237,230,218,.045); --accent:#ff5a1f; --on-accent:#0a0a0b;
+  --glow:0 0 22px rgba(255,90,31,.42); --texture:none;
+  --f-display:'Archivo','Arial Black',system-ui,sans-serif; --f-body:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace; --f-serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --f-note:'Kalam','Comic Sans MS','Bradley Hand',cursive; --f-deva:'Anek Devanagari','Kohinoor Devanagari','Noto Sans Devanagari',sans-serif;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light; --bg:#ede6da; --bg2:#e5ddce; --code:#e8e0d1; --ink:#0a0a0b; --dim:rgba(10,10,11,.68); --mute:rgba(10,10,11,.46);
+    --line:rgba(10,10,11,.17); --grid:rgba(10,10,11,.05); --accent:#d1242a; --on-accent:#ede6da; --glow:none;
+    --texture:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .04 0 0 0 0 .04 0 0 0 0 .04 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+:root[data-theme="light"]{
+  color-scheme:light; --bg:#ede6da; --bg2:#e5ddce; --code:#e8e0d1; --ink:#0a0a0b; --dim:rgba(10,10,11,.68); --mute:rgba(10,10,11,.46);
+  --line:rgba(10,10,11,.17); --grid:rgba(10,10,11,.05); --accent:#d1242a; --on-accent:#ede6da; --glow:none;
+  --texture:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .04 0 0 0 0 .04 0 0 0 0 .04 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+body{background-color:var(--bg);background-image:var(--texture),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:240px 240px,40px 40px,40px 40px;color:var(--ink);font-family:var(--f-body);font-size:16.5px;line-height:1.6;
+  font-variation-settings:'wdth' 100;-webkit-font-smoothing:antialiased;padding-inline:clamp(16px,4vw,44px)}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto}
+.mono{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.display{font-family:var(--f-display);font-weight:820;font-variation-settings:'wdth' 125;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;text-wrap:balance}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400}
+.note{font-family:var(--f-note);color:var(--accent)}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);margin-inline:calc(-1*clamp(16px,4vw,44px));padding:10px clamp(16px,4vw,44px)}
+.bar .wrap{display:flex;gap:10px 22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.bar nav{display:flex;flex-wrap:wrap;gap:4px 16px}
+.bar nav a{text-decoration:none}
+.bar b{color:var(--ink);font-weight:700}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:var(--glow);margin-right:8px;vertical-align:1px;animation:blink 1.09s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(36px,6vw,72px) 28px}
+.hero h1{font-size:clamp(32px,4.9vw,62px);margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--accent);text-shadow:var(--glow)}
+.hero p{color:var(--dim);max-width:60ch;margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);background:transparent;color:var(--ink);
+  padding:11px 16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:700;box-shadow:var(--glow)}
+.btn:hover{border-color:var(--accent)}
+.plate{position:relative;border:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 70%,transparent);padding:18px 18px 14px}
+.plate:before,.plate:after{content:"";position:absolute;width:14px;height:14px;border-color:var(--ink);border-style:solid;opacity:.8}
+.plate:before{left:-1px;top:-1px;border-width:2px 0 0 2px}.plate:after{right:-1px;bottom:-1px;border-width:0 2px 2px 0}
+.spec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+#spec{width:100%;height:auto;display:block;margin-top:6px}
+#spec text{font-family:var(--f-mono)}
+.spec-ctl{display:flex;align-items:center;gap:12px;margin-top:8px}
+.spec-ctl input{flex:1;accent-color:var(--accent)}
+/* sections */
+section{padding-block:clamp(40px,6vw,76px);border-top:1px solid var(--line)}
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(20px,4vw,48px);align-items:start}
+.sh h2{font-size:clamp(24px,3.3vw,38px);margin:10px 0 14px}
+.sh p{color:var(--dim);max-width:62ch}
+.steps{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.steps li{border:1px solid var(--line);padding:14px;background:color-mix(in srgb,var(--bg2) 60%,transparent)}
+.steps b{display:block;font-family:var(--f-display);font-variation-settings:'wdth' 125;font-weight:800;text-transform:uppercase;font-size:15px;margin:6px 0 4px}
+.steps span{color:var(--dim);font-size:14.5px}
+.loop{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:24px;align-items:center;margin-top:30px}
+.loop video{width:100%;max-width:100%;aspect-ratio:9/16;display:block;border:1px solid var(--line);background:#000}
+/* prompt blocks */
+.pblock{border:1px solid var(--line);background:var(--code)}
+.phead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 10px 8px 14px;border-bottom:1px solid var(--line)}
+.copy{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:var(--ink);border:1px solid var(--line);padding:7px 11px;cursor:pointer}
+.copy:hover,.copy.done{border-color:var(--accent);color:var(--accent)}
+pre{margin:0;padding:14px 16px;font-family:var(--f-mono);font-size:12.5px;line-height:1.62;white-space:pre-wrap;word-break:break-word;color:var(--ink);overflow:auto}
+pre.tall{max-height:520px}pre.mid{max-height:300px}
+.hl{color:var(--accent)}
+/* type + tokens */
+.fonts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:26px}
+.font{border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px;background:color-mix(in srgb,var(--bg2) 60%,transparent)}
+.font .sample{font-size:40px;line-height:1.1;min-height:56px;overflow-wrap:anywhere}
+.font p{margin:0;color:var(--dim);font-size:14.5px}
+.font .meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:22px}
+.sw{border:1px solid var(--line);cursor:pointer;background:transparent;color:var(--ink);text-align:left;padding:0;font:inherit}
+.sw i{display:block;height:74px;border-bottom:1px solid var(--line)}
+.sw div{padding:9px 11px}
+.sw b{display:block;font-family:var(--f-mono);font-size:13px}
+.sw small{color:var(--dim);font-size:12.5px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.specs div{border-top:1px solid var(--line);padding-top:10px}
+.specs b{font-family:var(--f-mono);font-size:13px;font-weight:500}
+.specs p{margin:4px 0 0;color:var(--dim);font-size:14px}
+.zones{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;align-items:center;margin-top:22px}
+.zones svg{width:130px;height:auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;border:1px solid var(--line);padding:5px 9px;color:var(--dim)}
+/* scenes */
+.scenes{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;margin-top:28px}
+.scene{border:1px solid var(--line);display:grid;grid-template-columns:118px minmax(0,1fr);background:color-mix(in srgb,var(--bg2) 55%,transparent)}
+.scene img{width:118px;aspect-ratio:9/16;object-fit:cover;display:block;border-right:1px solid var(--line)}
+.scene .body{display:flex;flex-direction:column;min-width:0}
+.scene h3{font-family:var(--f-display);font-variation-settings:'wdth' 125;font-weight:800;text-transform:uppercase;font-size:15px;line-height:1.15;margin:0}
+.scene .top{padding:12px 12px 8px;display:flex;flex-direction:column;gap:5px}
+.scene .top p{margin:0;color:var(--dim);font-size:13.5px;line-height:1.45}
+.scene .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 12px 10px}
+.scene pre{border-top:1px solid var(--line);max-height:190px;font-size:11.5px;background:var(--code);flex:1}
+.paper-tag{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;color:var(--accent);border:1px solid var(--accent);padding:2px 6px}
+/* numbers table */
+.tbl{overflow-x:auto;margin-top:18px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+td:nth-child(2){font-family:var(--f-mono);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:22px}
+/* wild */
+.wild{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:26px}
+.w{border:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:7px;background:color-mix(in srgb,var(--bg2) 55%,transparent)}
+.w h3{margin:0;font-size:16px;line-height:1.3;font-weight:700}
+.w p{margin:0;color:var(--dim);font-size:14px;line-height:1.5}
+.w .meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.conf{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;border:1px solid var(--line)}
+.conf.high{border-color:var(--accent);color:var(--accent)}
+.empty{border:1px dashed var(--line);padding:18px;color:var(--dim)}
+footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--dim);font-size:14px;display:grid;gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--accent);color:var(--on-accent);
+  font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;box-shadow:var(--glow)}
+@media (max-width:900px){
+  .hero,.sh,.two{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .loop{grid-template-columns:minmax(0,1fr)} .loop video{max-width:280px}
+  .scenes{grid-template-columns:minmax(0,1fr)}
+  .scene{grid-template-columns:92px minmax(0,1fr)} .scene img{width:92px}
+}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+</style>
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img,video{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <div class="mono"><span class="dot"></span><b>Specimen &amp; Signal</b> &nbsp;/&nbsp; prompt library</div>
+  <nav class="mono" aria-label="Sections">
+    <a href="#how">How</a><a href="#style">Style</a><a href="#fonts">Fonts</a><a href="#tokens">Tokens</a><a href="#kit">Kit</a><a href="#scenes">Scenes</a><a href="#finish">Finish</a><a href="#wild">In the wild</a>
+  </nav>
+</div></div>
+
+<main class="wrap">
+  <header class="hero">
+    <div>
+      <div class="mono">Prompt library &nbsp;·&nbsp; 12 scenes &nbsp;·&nbsp; 5 fonts &nbsp;·&nbsp; 1 look</div>
+      <h1 class="display">Motion graphics that read like a <em>measuring instrument</em></h1>
+      <p>Copy-ready prompts for dark, technical explainer animation: glyph specimens with metric lines, live plots, ray diagrams, wireframes and data readouts, with inverted paper scenes and red rubber stamps. They come from a two-minute UPI explainer reel. Claude Opus 5.5 wrote the style system and scene briefs and did the compositing, and six Codex agents wrote the scene code. Paste them into any strong coding model.</p>
+      <div class="btns">
+        <button class="btn primary copy-now" data-target="p-style">Copy the style system</button>
+        <a class="btn" href="#scenes">Browse scene prompts</a>
+      </div>
+    </div>
+    <div class="plate" aria-label="Live glyph specimen">
+      <div class="spec-head"><span class="mono">Specimen 01 · Anek 800</span><span class="mono" id="wdthOut" style="white-space:nowrap;color:var(--accent)">WDTH 100.0</span></div>
+      <svg id="spec" viewBox="0 0 600 330" role="img" aria-label="The Hindi word scan, स्कैन, drawn as a type specimen with metric lines">
+        <g id="lines"></g>
+        <text id="glyph" x="300" y="210" text-anchor="middle" style="font-family:var(--f-deva);font-weight:800;font-size:170px;fill:var(--ink)">स्कैन</text>
+      </svg>
+      <div class="spec-ctl"><span class="mono">75</span><input id="wdth" type="range" min="75" max="125" step="0.5" value="100" aria-label="Width axis"><span class="mono">125</span></div>
+      <div class="mono" style="margin-top:8px">Hindi · "scan" &nbsp;·&nbsp; drag to set the width axis</div>
+    </div>
+  </header>
+
+  <section id="how">
+    <div class="sh">
+      <div>
+        <div class="mono">How it works</div>
+        <h2 class="display">One page per shot, rendered frame by frame</h2>
+        <p>Every shot is a small HTML page with one SVG. <code class="mono">window.renderFrame(t)</code> draws the frame for time <i>t</i>. A headless browser steps through t = 0, 1/24, 2/24… and ffmpeg stitches the screenshots. Nothing depends on real time, so any frame renders the same way every time, and a model can preview the exact moments it needs to check.</p>
+      </div>
+      <div>
+        <ol class="steps">
+          <li><span class="mono">Step 1</span><b>Set the look</b><span>Paste the style system prompt once, at the start of the session.</span></li>
+          <li><span class="mono">Step 2</span><b>Build the kit</b><span>One run builds the reusable instruments and two demo sheets. Review them before any scene work.</span></li>
+          <li><span class="mono">Step 3</span><b>Brief each shot</b><span>Give the narration, the beat words with times, and a scene prompt. Ask for previews at every beat.</span></li>
+          <li><span class="mono">Step 4</span><b>Finish</b><span>Map the music's beats, then composite: HUD, kick punch, cut flashes, bloom, grain.</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="loop">
+      <video src="img/loop.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Six seconds of the reel: a timing plot and a national volume counter"></video>
+      <div>
+        <div class="mono">Six seconds from the reel</div>
+        <p class="serif" style="font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:10px 0 12px">A Gantt plot of the payment's hops lands on Σ 2.00 s, then a Devanagari specimen and a counter spin up to 24,50,00,00,000.</p>
+        <p style="color:var(--dim);margin:0">Watch the HUD: the beat LEDs follow the music at 110 BPM, each kick nudges the frame in, and every cut flashes and glitches for three frames.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="style">
+    <div class="sh">
+      <div>
+        <div class="mono">The style system</div>
+        <h2 class="display">Paste this first</h2>
+        <p>It sets the palette, the five type roles, the signature glyph specimen, line weights, motion rules and what to leave to compositing. The two rules that matter most: one orange signal at a time, and every visual lands on the word the narrator is saying.</p>
+        <p class="note" style="font-size:22px;transform:rotate(-2deg);margin-top:18px">↘ also works for Remotion. Swap renderFrame(t) for useCurrentFrame().</p>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="mono">prompt · style system</span><button class="copy" data-target="p-style">Copy</button></div>
+<pre class="tall" id="p-style">You are a motion designer and front-end engineer. Build each shot as one self-contained HTML page with a single 720×1280 SVG, rendered at 1.5× to 1080×1920, 24 fps.
+
+LOOK: a precision scientific instrument measuring the subject. Glyph specimens with metric lines, live plots, ray diagrams, spectrograms, 3D wireframe grids, callout lines with small data readouts. Calm, exact, premium. Never cartoonish.
+
+PALETTE (nothing else)
+- background #0a0a0b with a faint measurement grid: cream at 5–6 %, 40 px cells, small + marks at intersections
+- signal orange #ff5a1f: only the one thing that matters right now. Max two orange elements on screen. Flat colour, no gradients.
+- cream #ede6da for all type and lines. Hierarchy by opacity only: 100 / 60 / 35 / 15 / 6 %.
+- paper scenes only: cream paper #ede6da with fibre/noise texture, black ink #0a0a0b, red rubber stamp #d1242a, no orange
+
+TYPE
+- hero letters: Anek Devanagari, weight 800, width axis animated 75↔125, 180–460 px
+- Latin display: Archivo, weight 800–900, width 125, uppercase, tracking −0.01em, 44–150 px
+- HUD labels: JetBrains Mono 500, uppercase, tracking 0.12em, 11–16 px (values 18–40 px)
+- quiet lines: Instrument Serif italic, sentence case, 36–84 px
+- margin notes: Kalam, rotated −5°…+3°, with a hand-drawn arrow
+Pair every hero glyph with a small mono gloss (HINDI · "SCAN"). On-screen text must match the script exactly.
+
+GLYPH SPECIMEN (signature element)
+A giant glyph with full-width hairlines for HEADLINE/SHIROREKHA, BASELINE and DESCENDER (Latin: CAP-HEIGHT, X-HEIGHT, BASELINE). Label each in tiny mono with a unit value, add a side ruler, a bracket callout on one stroke (STEM 118 U) and a live WDTH readout. Measure line positions from the rendered glyph after fonts load, never from guesses.
+
+LINES
+Hairline 1.25 px, rule 2 px, heavy 4 px, round caps. Crosshair nodes r 6–14. Callouts: dot → straight or orthogonal leader → mono label + value box.
+
+MOTION
+Draw-ons with outExpo. Snap-ons with a 2-frame flicker (0 → 1 → .35 → 1). Counters that tick in mono, scanning cursors. No bounce, elastic or overshoot. Land each visual exactly on its beat, the moment the narrator says the word, anticipating by at most 0.08 s. Keep something alive until the last frame: slow drift, a scanning cursor, a flickering last digit. Cuts are hard, so show the first element within 2 frames.
+
+DETERMINISM
+window.setup() builds the SVG. window.renderFrame(t) sets the entire frame for time t in seconds. No CSS animations, transitions, requestAnimationFrame or Math.random; use a seeded RNG. Any frame must render correctly in any order.
+
+LEAVE TO COMPOSITING
+Crop marks, timecode, BPM counter, beat LEDs, grain, vignette, bloom, chromatic aberration, flashes, glitches and camera shake. Keep y 0–80 and y 1190–1280 clear. Keep important text inside x 40–650, y 110–1060.
+
+LOGOS
+Never draw or imitate a real logo. Place supplied logo files on a small cream plate with a mono caption, or use plain type.</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="fonts">
+    <div class="sh">
+      <div>
+        <div class="mono">Fonts · all free under the SIL Open Font License</div>
+        <h2 class="display">Five faces, five jobs</h2>
+        <p>Two of them are variable fonts with a real width axis. Animating <span class="mono">wdth</span> is what makes the specimens feel measured instead of stretched. Faking width with <span class="mono">scaleX</span> distorts the stroke weights.</p>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="mono">html · load all five</span><button class="copy" data-target="p-fonts">Copy</button></div>
+<pre id="p-fonts">&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wdth,wght@75..125,100..800&amp;family=Archivo:wdth,wght@62..125,100..900&amp;family=Instrument+Serif:ital@1&amp;family=JetBrains+Mono:wght@100..800&amp;family=Kalam&amp;display=swap"&gt;
+
+.deva    { font-family:'Anek Devanagari'; font-variation-settings:'wght' 800,'wdth' 100; }
+.display { font-family:'Archivo'; font-variation-settings:'wght' 850,'wdth' 125; text-transform:uppercase; letter-spacing:-.01em; }
+.mono    { font-family:'JetBrains Mono'; font-weight:500; text-transform:uppercase; letter-spacing:.12em; }
+.serif   { font-family:'Instrument Serif'; font-style:italic; }
+.note    { font-family:'Kalam'; }</pre>
+      </div>
+    </div>
+    <div class="fonts">
+      <div class="font"><div class="sample" style="font-family:var(--f-deva);font-weight:800;font-variation-settings:'wdth' 118">पिन हो गया</div>
+        <div class="meta"><b>Anek Devanagari</b><span class="mono">wdth 75–125 · wght 800</span></div><p>Hero letters and glyph specimens. Animate the width axis on the beat.</p>
+        <a class="mono" href="https://fonts.google.com/specimen/Anek+Devanagari" target="_blank" rel="noopener">Google Fonts ↗</a></div>
+      <div class="font"><div class="sample display" style="font-size:36px">Scan. Pin.</div>
+        <div class="meta"><b>Archivo</b><span class="mono">wdth 125 · wght 800–900</span></div><p>Latin display: headlines and key numbers, always uppercase and wide.</p>
+        <a class="mono" href="https://fonts.google.com/specimen/Archivo" target="_blank" rel="noopener">Google Fonts ↗</a></div>
+      <div class="font"><div class="sample" style="font-family:var(--f-mono);font-size:21px;letter-spacing:.12em;text-transform:uppercase;padding-top:12px">BPM 110.0 · BAR 031</div>
+        <div class="meta"><b>JetBrains Mono</b><span class="mono">500 · caps · +0.12em</span></div><p>HUD labels, readouts, axis ticks, timecodes. Tiny, tracked, uppercase.</p>
+        <a class="mono" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener">Google Fonts ↗</a></div>
+      <div class="font"><div class="sample serif">Still free.</div>
+        <div class="meta"><b>Instrument Serif</b><span class="mono">italic</span></div><p>One or two quiet, poetic lines per section. Sentence case, generous size.</p>
+        <a class="mono" href="https://fonts.google.com/specimen/Instrument+Serif" target="_blank" rel="noopener">Google Fonts ↗</a></div>
+      <div class="font"><div class="sample note" style="font-size:32px;transform:rotate(-3deg);transform-origin:left">but the money left?!</div>
+        <div class="meta"><b>Kalam</b><span class="mono">regular · Latin + Devanagari</span></div><p>Handwritten margin notes with a wobbly arrow. Orange on dark, ink or red on paper.</p>
+        <a class="mono" href="https://fonts.google.com/specimen/Kalam" target="_blank" rel="noopener">Google Fonts ↗</a></div>
+    </div>
+  </section>
+
+  <section id="tokens">
+    <div class="sh">
+      <div>
+        <div class="mono">Tokens</div>
+        <h2 class="display">Three colours and a stamp</h2>
+        <p>Cream carries everything: type, lines, grids, at five opacity steps. Orange is rationed to the single live value on screen. Stamp red appears only in the inverted paper scenes. Click a swatch to copy its hex.</p>
+        <div class="zones">
+          <svg viewBox="0 0 90 160" aria-label="Frame zones: HUD bands at top and bottom, safe content area in the middle">
+            <rect x="0.5" y="0.5" width="89" height="159" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+            <rect x="0.5" y="0.5" width="89" height="10" fill="var(--accent)" fill-opacity=".3"/>
+            <rect x="0.5" y="148.8" width="89" height="10.7" fill="var(--accent)" fill-opacity=".3"/>
+            <rect x="5" y="13.8" width="76.3" height="118.8" fill="none" stroke="currentColor" stroke-dasharray="2 2"/>
+          </svg>
+          <p style="margin:0;font-size:14.5px">Frame 720 × 1280 design space. Orange bands (y 0–80, 1190–1280) belong to the HUD. The dashed box (x 40–650, y 110–1060) is where text must live, clear of the app's own buttons and captions.</p>
+        </div>
+      </div>
+      <div>
+        <div class="swatches">
+          <button class="sw" data-hex="#0a0a0b"><i style="background:#0a0a0b"></i><div><b>#0a0a0b</b><small>Near-black: background, ink on paper</small></div></button>
+          <button class="sw" data-hex="#ff5a1f"><i style="background:#ff5a1f"></i><div><b>#ff5a1f</b><small>Signal orange: the one live thing</small></div></button>
+          <button class="sw" data-hex="#ede6da"><i style="background:#ede6da"></i><div><b>#ede6da</b><small>Cream: type, lines, paper</small></div></button>
+          <button class="sw" data-hex="#d1242a"><i style="background:#d1242a"></i><div><b>#d1242a</b><small>Stamp red: paper scenes only</small></div></button>
+        </div>
+        <div class="specs">
+          <div><b>Cream opacity 100 · 60 · 35 · 15 · 6</b><p>Primary text, labels, construction lines, gridlines, grid fill.</p></div>
+          <div><b>Lines 1.25 / 2 / 4 px</b><p>Hairline, rule, heavy, in the 720-wide design space.</p></div>
+          <div><b>Grid 40 px</b><p>Cream at 5 %, small + marks at intersections, slow drift.</p></div>
+          <div><b>24 fps · 1080 × 1920</b><p>Design at 720 × 1280, render at deviceScaleFactor 1.5.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kit">
+    <div class="sh">
+      <div>
+        <div class="mono">The component kit</div>
+        <h2 class="display">Build the instruments once</h2>
+        <p>Every scene reuses the same parts, so build them first and review two demo sheets before any shot. In our run the kit took one Codex session. Its own previews caught a label collision and a glyph running off the edge, and it fixed both before it stopped.</p>
+        <div class="chips"><span>glyph specimen</span><span>ruler</span><span>callout</span><span>live plot</span><span>spectrogram</span><span>wireframe grid · sphere · terrain</span><span>ray fan</span><span>crosshair node</span><span>data packet</span><span>QR matrix</span><span>counter</span><span>wireframe phone</span><span>rubber stamp</span><span>ledger</span><span>hex scramble</span></div>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="mono">prompt · component kit</span><button class="copy" data-target="p-kit">Copy</button></div>
+<pre class="tall" id="p-kit">Using the style system above, build lib/inst.js: one global INST object, plain JavaScript, no dependencies. Every component is a pure function of its options that returns SVG markup, or an object { svg(), update(t, …) } that sets attributes for time t. Expose INST.C (colour tokens) and INST.a(alpha) for cream at any opacity.
+
+1. page({paper, grid}): root SVG with shared defs (paper texture filter, stamp distress mask, chevron markers) and the measurement grid
+2. drift(t, dur): slow scale/pan transform for a content group
+3. deva / display / mono / serif / note(text, opts): the five type roles. note() adds a slightly wobbly hand-drawn arrow to a target point.
+4. scramble(str, t, t0, t1, seed), flicker(t, t0), dash(el, length, progress)
+5. specimen({str, script, size, wdth, metrics, ruler, stem}): the glyph specimen, with metric lines measured from the rendered glyph; update(t, {wdth, reveal})
+6. ruler, callout (dot → leader → label + value, draws on), plot (axes, 6 % gridlines, live orange series, scan cursor with readout)
+7. spectrogram (≤ 3000 cells, hottest cells orange), wire (grid | sphere | terrain | ring, perspective projection, rotating)
+8. ray and fan (dashed construction rays with chevrons), node (crosshair + mono label), packet (small orange square + mono tag, short fading trail)
+9. qr: a fictional QR-style matrix that builds in raster order behind a scan line. It must not encode real data.
+10. counter (display or mono, Indian or Western digit grouping), phone (wireframe outline with mm dimension lines and a screen group that can flash to cream)
+11. stamp (red rubber stamp: double-rule box, distressed ink, slams 1.25 → 1 in 3 frames), ledger (ruled ink table with handwritten cells), hex (scrambling hex bytes)
+
+Also build kit_demo.html (dark) and kit_paper.html (paper) showing every component. Preview frames at 0.2, 1, 2 and 3 s. Look at them at full size and fix anything misaligned, clipped or cluttered before you stop. Keep a frame under 1 s to render.</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="scenes">
+    <div class="mono">Scene prompts · fill the {BRACES}</div>
+    <h2 class="display" style="font-size:clamp(24px,3.3vw,38px);margin:10px 0 12px">Twelve shots, ready to adapt</h2>
+    <p style="color:var(--dim);max-width:70ch;margin:0">Each prompt starts with the same header: shot id, exact duration, narration and beat times. Beats are the seconds from the start of the shot when the narrator says each word; get them from word-level timestamps (Whisper or similar). The still is the matching frame from our reel, after compositing.</p>
+    <div class="scenes" id="sceneGrid"></div>
+  </section>
+
+  <section id="finish">
+    <div class="sh">
+      <div>
+        <div class="mono">Finishing</div>
+        <h2 class="display">The HUD, the punch and the grain</h2>
+        <p>The pages stay clean. Everything that makes it feel like footage from an instrument is added in one compositing pass, driven by a beat map of the music. These are the numbers we shipped.</p>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Effect</th><th>Setting</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Kick zoom punch</td><td>+1.7 % × strength, τ 85 ms</td><td>Felt more than seen. Content only; the HUD stays fixed.</td></tr>
+            <tr><td>Snare micro-shake</td><td>6 px × strength, 17 Hz, τ 70 ms</td><td>Random direction per hit, content only.</td></tr>
+            <tr><td>Cut flash</td><td>55 % → 18 % toward cream</td><td>Two frames on every hard cut.</td></tr>
+            <tr><td>Cut glitch</td><td>3 frames, bands ±70 px, RGB split 9 px</td><td>Decays 1 → 0.55 → 0.25.</td></tr>
+            <tr><td>Orange bloom</td><td>σ 6 + 18 px at ¼ res, gain 0.6 + 0.4</td><td>Mask: (R − (G+B)/2 − 60) / 100.</td></tr>
+            <tr><td>White bloom</td><td>luma &gt; 205, σ 5, gain 0.12</td><td>Barely there. Cream should not glow like orange.</td></tr>
+            <tr><td>Chromatic aberration</td><td>R +0.22 %, B −0.22 % radial</td><td>About 2 px at the corners.</td></tr>
+            <tr><td>Vignette</td><td>1 − 0.32 · r^2.4</td><td>r normalised to the corner.</td></tr>
+            <tr><td>Grain</td><td>σ ≈ 4 / 255, 16-frame cycle</td><td>Monochrome, half resolution. Files get about 3× bigger, so upload the master.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="two">
+      <div class="pblock">
+        <div class="phead"><span class="mono">prompt · compositor</span><button class="copy" data-target="p-comp">Copy</button></div>
+<pre class="mid" id="p-comp">Write a frame compositor in Python with OpenCV and numpy (1080×1920, 24 fps). It reads the shot list and the rendered shots and applies, in this order:
+
+1. Camera, content only. Each kick adds a zoom punch of 1.7 % × strength decaying with τ = 85 ms. Each snare adds a micro-shake of 6 px × strength, oscillating at 17 Hz and decaying with τ = 70 ms, in a random direction per hit.
+2. Cuts. On the first frame of every shot, a flash (blend 55 % toward #ede6da, then 18 % on the next frame) and a glitch for 3 frames: 7–12 horizontal bands shifted up to ±70 px plus a 9 px RGB split, decaying 1 → 0.55 → 0.25.
+3. HUD, fixed on screen, JetBrains Mono, cream at 60–85 %: L-shaped corner crop marks (44 px legs, 2 px, 48 px from the edges). Top-left: project name, scene counter (SC 07/52) and scene name. Top-right: timecode HH:MM:SS:FF and "24 FPS 1080x1920". Bottom-left: "BPM 110.0  BAR 031  BEAT 2/4". Bottom-right: four beat LEDs that light orange on their beat and fade with τ 0.16 s, plus K and S LEDs that flash on kicks and snares.
+4. Captions (presenter and B-roll shots only): a dark readout plate (#0a0a0b at 64 %, 1 px cream border at 22 %, corner ticks), Archivo wide caps, the word being spoken in #ff5a1f and upcoming words at 45 %, snapping on with a 2-frame flicker.
+5. Finish. Orange-masked bloom plus a weak white bloom, radial chromatic aberration, vignette and monochrome grain, with the settings in the table.
+
+Add a --frames option that writes a few stills so you can check a look without rendering the whole reel.</pre>
+      </div>
+      <div class="pblock">
+        <div class="phead"><span class="mono">prompt · beat map</span><button class="copy" data-target="p-beats">Copy</button></div>
+<pre class="mid" id="p-beats">Analyse the music bed and write beats.json for the compositor: bpm, phase, beats, bars, kicks and snares, each hit with a strength from 0 to 1.
+
+1. Tempo and phase. Compute onset strength in four bands (35–120 Hz, 120–1000 Hz, 1–4.5 kHz, 4.5–11 kHz). Grid-search BPM within ±0.1 in steps of 0.005, and the phase, so onsets land on the 8th-note grid. Do not trust a single autocorrelation estimate: a 0.1 % tempo error drifts about 90 ms over two minutes, which is enough to miss every hit in the last third.
+2. Downbeat: the beat position (0–3) with the strongest low-band onsets.
+3. Walk bar by bar through the eight 8th-note positions. Mark a KICK where the 35–120 Hz onset is ≥ 0.55 and ≥ 60 % of that bar's strongest. Mark a SNARE (accent) where the 1–4.5 kHz onset is ≥ 0.75 and at least 0.3 above the bar's median: at most two per bar, never on a kick.
+4. Keep the strengths so quiet sections barely move the camera. Plot the kicks, snares and bar lines over the low-band envelope and check the pattern by eye before using it.</pre>
+      </div>
+    </div>
+    <div class="pblock" style="margin-top:16px">
+      <div class="phead"><span class="mono">node · render loop (puppeteer + ffmpeg)</span><button class="copy" data-target="p-render">Copy</button></div>
+<pre class="mid" id="p-render">// render.mjs: node render.mjs shot.html 2.208 out.mp4   (needs puppeteer and ffmpeg)
+import puppeteer from 'puppeteer';
+import { spawn } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
+import path from 'node:path';
+
+const [page_, seconds, out] = process.argv.slice(2);
+const FPS = 24, frames = Math.round(Number(seconds) * FPS);
+const browser = await puppeteer.launch({ headless: true });
+const page = await browser.newPage();
+await page.setViewport({ width: 720, height: 1280, deviceScaleFactor: 1.5 });
+await page.goto(pathToFileURL(path.resolve(page_)).href, { waitUntil: 'load' });
+await page.evaluate(async () => { await document.fonts.ready; if (window.setup) await window.setup(); });
+
+const ff = spawn('ffmpeg', ['-y', '-f', 'image2pipe', '-framerate', String(FPS), '-i', '-',
+  '-frames:v', String(frames), '-c:v', 'libx264', '-crf', '16', '-pix_fmt', 'yuv420p', out], { stdio: ['pipe', 'inherit', 'inherit'] });
+for (let i = 0; i &lt; frames; i++) {
+  await page.evaluate(t =&gt; window.renderFrame(t), i / FPS);
+  ff.stdin.write(await page.screenshot({ type: 'png' }));
+}
+ff.stdin.end();
+await new Promise(r =&gt; ff.on('close', r));
+await browser.close();</pre>
+    </div>
+  </section>
+
+  <section id="wild">
+    <div class="sh">
+      <div>
+        <div class="mono">In the wild</div>
+        <h2 class="display">Opus 5.5 animations worth studying</h2>
+        <p id="wildIntro">Grok searched the web and X on 28 Sep 2026 for animations people made with Claude Opus 5.5. We checked every link against X's and YouTube's public embed data: each post exists and names Opus 5.5. The descriptions are ours. Follow the links for the originals and the creators' own prompts.</p>
+      </div>
+      <div class="plate" style="align-self:stretch"><div class="mono">What the best ones share</div><div id="wildNotes" style="margin-top:8px;color:var(--dim);font-size:14.5px"></div></div>
+    </div>
+    <div class="wild" id="wildGrid"></div>
+  </section>
+
+  <footer>
+    <div class="mono">Specimen &amp; Signal · prompt library v1 · 28 Sep 2026</div>
+    <div>Prompts on this page are free to copy and adapt. Fonts are from Google Fonts under the SIL Open Font License. Stills come from a UPI explainer reel; its reaction clips are public-domain films from Wikimedia Commons, toned to the palette.</div>
+  </footer>
+</main>
+<div class="toast" id="toast" hidden>Copied</div>
+
+<script>
+const SCENES = [
+ {id:'chronometer', title:'Glyph specimen + chronometer', note:'Numbers, durations, "two seconds"', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s
+
+Hero glyph specimen of {DEVANAGARI_NUMERAL} (Anek Devanagari, about 460 px) with full metric lines and labels. Its width sweeps 75 → 125 across the shot. Around it, a precision chronometer ring: hairline circle, 100 ticks with every 10th longer, and an orange hand that sweeps one full turn. Mono gloss: {UNICODE_NAME}. On '{WORD_1}' a mono readout {READOUT} flickers on. On '{WORD_2}' Archivo {WORD} (60 px) snaps in under the glyph.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'trajectory', title:'Trajectory over wireframe terrain', note:'A journey, a route, "road trip"', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s
+
+A slowly rotating perspective wireframe terrain fills the lower two thirds. An orange data packet (small square + mono tag {PACKET_LABEL}) travels a looping dashed trajectory over it, passing crosshair waypoints labelled {WAYPOINTS}. Callout on the packet: {READOUT}. On '{WORD_1}' an Instrument Serif italic line appears: {LINE_ON_SCREEN}. On '{WORD_2}' its last word gets a hand-drawn orange underline, and the packet turns cream so only one orange element stays on screen.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'qr-build', title:'Matrix build with lock-on brackets', note:'Introduce an object part by part', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s
+
+Mono label {STEP_LABEL} top-left. Archivo {HEADLINE} (120 px) snaps in on '{WORD_2}'. Centre: a fictional QR-style matrix (29 × 29 modules, about 420 px) builds module by module in raster order behind a scan line. Callouts name its parts: FINDER PATTERN 7×7, TIMING ROW, 29 × 29 MODULES. On '{WORD_2}' the build completes and four orange corner brackets lock onto the code. The matrix must not encode real data.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'decode', title:'Decode to plain text + camera reticle', note:'"It\'s not magic, just data"', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s, {WORD_3} @ {T3}s, {WORD_4} @ {T4}s
+
+The matrix shrinks to the top and its modules fall into a spectrogram-style waterfall that resolves into lines of JetBrains Mono: {DECODED_LINES}. They scramble-resolve left to right and are fully readable by '{WORD_3}'. On '{WORD_1}' Instrument Serif {DENIAL_LINE} appears and an orange strike-through draws across it over 4 frames. On '{WORD_2}' a mono tag {TAG}. On '{WORD_4}' a camera reticle snaps around the text: focus brackets, centre crosshair, AF · LOCK and ISO 400 · 1/60.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'cipher', title:'Custody ray diagram (cipher + key)', note:'Who can see what, who holds the key', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s, {WORD_3} @ {T3}s, {WORD_4} @ {T4}s
+
+Left: four input dots flow into a cipher block of scrambling hex pairs. On '{WORD_1}' a line-drawn padlock closes around it (mono AES · LOCKED). A fan of dashed rays reaches three crosshair nodes: {NODE_A}, {NODE_B}, {NODE_C}. On '{WORD_2}' the rays to the first two end in small ✕ marks. On '{WORD_3}' only the ray to {NODE_C} turns solid orange. On '{WORD_4}' a line-drawn key appears at that node with Instrument Serif {LINE_ON_SCREEN}. Kalam margin note {NOTE}, with an arrow to the lock.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'timing', title:'Gantt timing plot', note:'Everything that happens in N seconds', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s
+
+Gantt-style timing plot. Rows with mono labels: {STEPS}. Bars fill left to right on a 0.0–{TOTAL} s axis while a vertical scan cursor sweeps with a live readout. On '{WORD_2}' a big readout Σ {TOTAL} S (Archivo 96 px, orange) appears with Instrument Serif {LINE_ON_SCREEN} under it.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'volume', title:'Big-number specimen + counter + trend', note:'Scale, totals, "billion times"', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s, {WORD_3} @ {T3}s
+
+Hero glyph specimen {DEVANAGARI_NUMBER} (about 150 px, must fit the width) with metric lines and a mono gloss {GLOSS}. On '{WORD_1}' an Archivo counter (90 px, orange) spins up to {NUMBER} in Indian grouping and lands exactly on '{WORD_2}', then turns cream. On '{WORD_3}' a small rising curve with no invented values ends in an orange marker labelled {MARKER}. Only one orange element at a time.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'never', title:'Truth table + Devanagari hero', note:'A rule, a yes and a never', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s, {WORD_3} @ {T3}s
+
+Truth table instrument: two rows {ROW_A} and {ROW_B}, one column {COLUMN}. On '{WORD_1}' row A shows ✓ YES. On '{WORD_2}' row B shows ✕ NEVER in orange. On '{WORD_3}' a Devanagari specimen {HINDI_WORD} (about 170 px) snaps in below with metric lines and its width sweeping, gloss HINDI · "{MEANING}", plus Instrument Serif {LINE_ON_SCREEN} at 84 px.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'ledger', paper:true, title:'Paper ledger + SETTLED stamp', note:'Bookkeeping, batches, settlement', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps. PAPER SCENE.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s, {WORD_3} @ {T3}s, {WORD_4} @ {T4}s
+
+Cream paper with visible fibre texture, black ink, no orange. A ruled ink ledger with columns {COLUMNS} and rows {ROWS}; handwritten Kalam tallies appear one by one. On '{WORD_1}' an Archivo ink headline {HEADLINE}. On '{WORD_2}' a ruled NET row sums the tallies. On '{WORD_3}' the ledger splits into three slips, BATCH 1–3. On '{WORD_4}' a red rubber stamp {STAMP} with sub-line {STAMP_SUB} slams in (scale 1.25 → 1 in 3 frames, distressed ink, rotated about −6°). Finish with a Kalam note {NOTE} and small clock sketches.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'receipt', paper:true, title:'Thermal receipt + FAILED stamp', note:'Something went wrong', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps. PAPER SCENE.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s
+
+A narrow thermal receipt slip on textured paper, printed in mono ink: {RECEIPT_LINES}. On '{WORD_1}' the line DEBITED ✓ prints. On '{WORD_2}' a big red rubber stamp FAILED (with a small Devanagari विफल under it) slams diagonally across the slip, and a red Kalam note {NOTE} appears with an arrow.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'scam', paper:true, title:'Message transcript + SCAM stamp', note:'A warning, a red flag', prompt:`Shot {ID}: {DURATION} s ({FRAMES} frames) at 24 fps. PAPER SCENE.
+Narration: "{LINE}"
+Beats: {WORD_1} @ {T1}s, {WORD_2} @ {T2}s
+
+A printed chat transcript on paper: header INCOMING MESSAGE and UNKNOWN NUMBER, then the message types out in mono ink: {MESSAGE}. On '{WORD_1}' a red Kalam note {NOTE} with an arrow. On '{WORD_2}' a huge red rubber stamp SCAM (sub-line धोखा) slams over the message at an angle.
+
+Preview frames just after every beat plus the first and last frame. Inspect them, fix problems, then render exactly {FRAMES} frames and confirm the count.`},
+ {id:'film-specimen', title:'Film specimen reaction card', note:'Composited, for public-domain clips', prompt:`Compositing template for a reaction clip (use public-domain or licensed footage only).
+
+Background #0a0a0b with a faint 60 px cream grid. Tone the clip to a cream-on-black duotone (luma → #0a0a0b…#ede6da) and frame it 960 px wide: 2 px cream border at 35 %, L-shaped corner brackets outside the frame, tick marks every 40 px along the top edge (every 5th longer). Above: mono REACTION SPECIMEN {N}/{TOTAL} on the left and PUBLIC DOMAIN {YEAR} on the right, then the joke in Archivo wide caps (max two lines, shrink the size rather than wrap to three) with the key word in orange. Below: mono 24 FPS · {FRAMES} FR · REEL T {TIMECODE} and SRC · {SOURCE}, and a Kalam orange credit {FILM}, {YEAR} with a small arrow up to the frame. The plate punches in 4 % over the first 4 frames. The narration pauses here, so the music carries the moment.`},
+];
+const grid = document.getElementById('sceneGrid');
+SCENES.forEach(s => {
+  const el = document.createElement('article'); el.className = 'scene';
+  el.innerHTML = `<img src="img/${s.id}.jpg" alt="" loading="lazy" width="118" height="210">
+    <div class="body"><div class="top">${s.paper ? '<span><span class="paper-tag">PAPER SCENE</span></span>' : ''}<h3></h3><p></p></div>
+    <div class="row"><span class="mono">prompt</span><button class="copy" data-target="p-${s.id}">Copy</button></div><pre id="p-${s.id}"></pre></div>`;
+  el.querySelector('h3').textContent = s.title; el.querySelector('p').textContent = s.note; el.querySelector('pre').textContent = s.prompt;
+  el.querySelector('img').alt = s.title + ', still from the reel';
+  grid.appendChild(el);
+});
+
+const WILD = [{"title": "Interactive camera lens lab", "url": "https://x.com/RyanSael/status/2102591147927654847", "platform": "X", "creator": "@RyanSael", "date": "2026-09-23", "summary": "Turn a focus ring and the glass elements move while a sharp focal plane slides through the scene. Built in about an hour from one prompt.", "stack": "Interactive 3D in the browser; library not named", "look": "The optics are the motion: an explainer you play with instead of a timeline.", "eng": "3.3M views", "prompt_url": "https://x.com/RyanSael/status/2102591147927654847"}, {"title": "Painted music video", "url": "https://x.com/other__reality/status/2102514581684052169", "platform": "X", "creator": "@other__reality", "date": "2026-09-22", "summary": "A full-length music video with a hand-painted look, posted on launch day as a test of Opus 5.5's visual design.", "stack": "p5.js with a brush library, headless Chrome frames, FFmpeg", "look": "Brush-stroke frames over a pop track, 1280×720.", "eng": "2.6M views", "prompt_url": ""}, {"title": "Overnight music video from one prompt", "url": "https://x.com/donaldjewkes/status/2102801274173587569", "platform": "X", "creator": "@donaldjewkes", "date": "2026-09-23", "summary": "About five minutes of spoken direction, roughly twelve hours of autonomous work, and a finished video in the morning.", "stack": "Generated image plates covered by JavaScript motion graphics and lyric type", "look": "Paper-like overlay, pop-stage staging, a sunflower-like lead character.", "eng": "3.4M views", "prompt_url": "https://x.com/donaldjewkes/status/2102801469976248500"}, {"title": "15-second motion-design showreel", "url": "https://x.com/stephanlivera/status/2103315922098470926", "platform": "X", "creator": "@stephanlivera", "date": "2026-09-25", "summary": "One sentence on max effort produced a 1920×1080 motion-graphics reel. The prompt went viral and many people re-ran it.", "stack": "Code-drawn motion graphics; renderer not named", "look": "Portfolio pacing. Re-runs without references drift toward centred type, gradients and fades.", "eng": "1.9M views", "prompt_url": "https://x.com/stephanlivera/status/2103315922098470926"}, {"title": "Antikythera underwater scene", "url": "https://x.com/edwinarbus/status/2102463453176979794", "platform": "X", "creator": "@edwinarbus", "date": "2026-09-22", "summary": "A playable one-file scene built around the Antikythera mechanism, with picture and sound generated in code.", "stack": "Three.js in a single HTML file", "look": "Schools of fish, seagrass, particles and a geared instrument you can inspect.", "eng": "387K views", "prompt_url": "https://x.com/edwinarbus/status/2102463453176979794"}, {"title": "The Battle of Austerlitz", "url": "https://x.com/WinterArc2125/status/2103116235009347650", "platform": "X", "creator": "@WinterArc2125", "date": "2026-09-24", "summary": "A five-minute coded film of Napoleon's battle. The model wrote the engine, the soldiers, the score and the narration.", "stack": "WebGL, terrain data, Kokoro TTS, synthesised sound, Chromium to FFmpeg", "look": "Historical-film scale: smoke, sky, cavalry and massed formations, with paintings as mood references.", "eng": "612K views", "prompt_url": "https://x.com/WinterArc2125/status/2103116689944502720"}, {"title": "Launch video for an inference startup", "url": "https://x.com/deedydas/status/2102787937482252537", "platform": "X", "creator": "@deedydas", "date": "2026-09-23", "summary": "A 26-second launch film for a fictional company, made in about a minute for roughly $2 without any video model.", "stack": "JavaScript animation, Playwright frame capture, FFmpeg", "look": "Launch-film pacing, arguing that code graphics explain technical products faster than photoreal video.", "eng": "341K views", "prompt_url": "https://x.com/deedydas/status/2102787937482252537"}, {"title": "A short history of AI", "url": "https://x.com/kimmonismus/status/2102844654169575547", "platform": "X", "creator": "@kimmonismus", "date": "2026-09-23", "summary": "A three-minute explainer from the Transformer paper onward, every frame drawn in code (about 7,400 lines).", "stack": "Remotion (React/TypeScript), SVG and Canvas, open-source TTS, score synthesised in Python", "look": "Diagrammatic vector scenes locked to narration.", "eng": "194K views", "prompt_url": "https://x.com/kimmonismus/status/2102844654169575547"}, {"title": "An essay turned into a video", "url": "https://x.com/brivael/status/2104216601864106226", "platform": "X", "creator": "@brivael", "date": "2026-09-27", "summary": "A long French-language essay adapted into an illustrated video, with illustrations the essay never had.", "stack": "Not disclosed", "look": "Essay adaptation with new artwork.", "eng": "655K views", "prompt_url": ""}, {"title": "CUDA kernel music video", "url": "https://x.com/elliotarledge/status/2104096029847277687", "platform": "X", "creator": "@elliotarledge", "date": "2026-09-27", "summary": "A roughly three-minute one-shot music video that teaches how to optimise CUDA kernels.", "stack": "Not stated", "look": "A technical lesson told as a song.", "eng": "488K views", "prompt_url": ""}, {"title": "Launch film for a fake calendar app", "url": "https://x.com/LexnLin/status/2104148233106723099", "platform": "X", "creator": "@LexnLin", "date": "2026-09-27", "summary": "A 33-second launch where the name, logo, UI, animation, soundtrack and effects are all code. The repo is linked in the replies.", "stack": "Code-rendered picture and sound, GitHub repo linked", "look": "Branded UI motion with original music, no stock footage.", "eng": "68K views", "prompt_url": ""}, {"title": "small print", "url": "https://x.com/Voxyz_ai/status/2102531681450119426", "platform": "X", "creator": "@Voxyz_ai", "date": "2026-09-22", "summary": "A 29-second square short: daily requests are sorted for the human detail inside them, kept in a jar, and turned into a constellation at night.", "stack": "One index.html rendered with HyperFrames, music synthesised in Python, no image assets", "look": "A quiet story beat instead of a logo sting, 2160×2160.", "eng": "123K views", "prompt_url": ""}, {"title": "Negroni recipe explainer", "url": "https://x.com/Ror_Fly/status/2102853258582880547", "platform": "X", "creator": "@Ror_Fly", "date": "2026-09-23", "summary": "A 30-second cocktail explainer built in HTML from a single reference image: the glass fills as each ingredient and measure appears.", "stack": "HTML and JavaScript, 1080×1080, no video model", "look": "Recipe-card motion system: numbered steps, counting measures, a progress rail.", "eng": "74K views", "prompt_url": "https://x.com/Ror_Fly/status/2102853258582880547"}, {"title": "UX interview explainer", "url": "https://x.com/moguzbulbul/status/2104206095313215591", "platform": "X", "creator": "@moguzbulbul", "date": "2026-09-27", "summary": "A short teaching animation made to explain UX decisions in job interviews. He offered the workflow to anyone who asked.", "stack": "Not stated", "look": "Interface-decision walkthrough.", "eng": "139K views", "prompt_url": ""}, {"title": "The showreel prompt at 4K", "url": "https://x.com/robj3d3/status/2103875898349088830", "platform": "X", "creator": "@robj3d3", "date": "2026-09-26", "summary": "The same one-sentence showreel prompt on xhigh effort, delivered at 3840×2160.", "stack": "Code-drawn motion graphics; renderer not named", "look": "A high-resolution take on the viral brief.", "eng": "120K views", "prompt_url": "https://x.com/robj3d3/status/2103875898349088830"}, {"title": "Gravitational lensing lab", "url": "https://x.com/Voxyz_ai/status/2103117246860345550", "platform": "X", "creator": "@Voxyz_ai", "date": "2026-09-24", "summary": "Drag a black hole and the sky bends into arcs, then a full Einstein ring. One prompt made the first version and overnight review loops refined it.", "stack": "Interactive 3D in the browser; agent review loops with screenshots and rollbacks", "look": "A science demo with a dedicated lighting and type pass.", "eng": "115K views", "prompt_url": "https://x.com/Voxyz_ai/status/2103117246860345550"}, {"title": "Cel-animation painting test", "url": "https://x.com/IndraVahan/status/2104280029442331015", "platform": "X", "creator": "@IndraVahan", "date": "2026-09-27", "summary": "A weekend film that is deliberately not a one-shot: five or more takes per frame so each one reads like a painting.", "stack": "Stroke-level drawing by the model", "look": "Painted frames instead of shape tweens, 720×1280.", "eng": "19K views", "prompt_url": ""}, {"title": "Manim lesson on the derivative", "url": "https://x.com/LinearUncle/status/2103128559174971663", "platform": "X", "creator": "@LinearUncle", "date": "2026-09-24", "summary": "A long classroom video on the idea of the derivative, built in Manim with synthesised narration.", "stack": "Manim, edge-tts", "look": "Definition first, then worked examples.", "eng": "22K views", "prompt_url": "https://x.com/LinearUncle/status/2103128559174971663"}, {"title": "90-second showreel with a piano score", "url": "https://x.com/kloss_xyz/status/2103557735086428547", "platform": "X", "creator": "@kloss_xyz", "date": "2026-09-25", "summary": "A motion and sound design demo in which the model also composed an original piano score. A rewritten prompt is in the replies.", "stack": "Code-rendered motion, original piano score", "look": "16:9, paced to the piano. Small wording changes shift the model's taste, so render several variants.", "eng": "44K views", "prompt_url": "https://x.com/kloss_xyz/status/2103560107921723834"}, {"title": "Claude Opus 5.5 Just Solved Motion Graphics", "url": "https://www.youtube.com/watch?v=6Ij9-f2T2Ck", "platform": "YouTube", "creator": "Bart Slodyczka", "date": "2026-09-25", "summary": "A 12-minute walkthrough of a free skill that has Opus 5.5 cut code-drawn B-roll into a talking-head video, timed to the speech.", "stack": "HTML, CSS and JavaScript rendered to MP4", "look": "Continuous shape morphs locked to the speaker's rhythm.", "eng": "75K views", "prompt_url": ""}];
+const WILD_NOTES = "The strongest pieces write a deterministic animation (one HTML file, Canvas or SVG, Remotion, HyperFrames, Three.js or Manim), let a headless browser seek exact frames and encode with FFmpeg. Audio is often synthesised in Python or Web Audio. The viral one-line showreel prompt shows the limit: with no reference, results drift to centred type, gradients and fades. The pieces that look authored add a reference, real assets, or a review loop that re-reads the render second by second. The style system and per-beat previews on this page do the same job.";
+const wg = document.getElementById('wildGrid');
+if (!WILD.length) {
+  wg.innerHTML = '<div class="empty">The search results are still being checked. This list fills in on the next update.</div>';
+} else {
+  WILD.forEach(w => {
+    const el = document.createElement('article'); el.className = 'w';
+    el.innerHTML = `<div class="meta"><span class="mono"></span><span class="conf high"></span></div><h3><a target="_blank" rel="noopener"></a></h3>
+      <p class="sum"></p><p class="stack"></p><p class="look"></p>`;
+    el.querySelector('.meta .mono').textContent = [w.platform, w.creator, w.date].filter(Boolean).join(' · ');
+    el.querySelector('.conf').textContent = 'verified · ' + w.eng;
+    const a = el.querySelector('a'); a.textContent = w.title; a.href = w.url;
+    el.querySelector('.sum').textContent = w.summary;
+    el.querySelector('.stack').innerHTML = '<span class="mono" style="font-size:10.5px">Stack</span> ';
+    el.querySelector('.stack').append(w.stack);
+    el.querySelector('.look').innerHTML = '<span class="mono" style="font-size:10.5px">Look</span> ';
+    el.querySelector('.look').append(w.look);
+    if (w.prompt_url) { const l = document.createElement('a'); l.className = 'mono'; l.href = w.prompt_url; l.target = '_blank'; l.rel = 'noopener'; l.textContent = 'Prompt in the post ↗'; el.appendChild(l); }
+    wg.appendChild(el);
+  });
+}
+document.getElementById('wildNotes').textContent = WILD_NOTES || 'Filled in from the search notes when the list updates.';
+
+// copy
+const toast = document.getElementById('toast'); let tt;
+function flash(msg) { toast.textContent = msg; toast.hidden = false; clearTimeout(tt); tt = setTimeout(() => toast.hidden = true, 1600); }
+function selectText(node) { const r = document.createRange(); r.selectNodeContents(node); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+async function copyText(text, node, btn) {
+  try { await navigator.clipboard.writeText(text); flash('Copied'); if (btn) { btn.classList.add('done'); const o = btn.textContent; btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = o; btn.classList.remove('done'); }, 1400); } }
+  catch (e) { if (node) selectText(node); flash('Text selected: press Ctrl/⌘ + C'); }
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.copy, .copy-now'); if (b) { const n = document.getElementById(b.dataset.target); copyText(n.textContent, n, b.classList.contains('copy') ? b : null); return; }
+  const s = e.target.closest('.sw'); if (s) copyText(s.dataset.hex, s.querySelector('b'), null);
+});
+
+// live specimen
+const svg = document.getElementById('spec'), glyph = document.getElementById('glyph'), lines = document.getElementById('lines');
+const out = document.getElementById('wdthOut'), slider = document.getElementById('wdth');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; let userSet = false, W = 100;
+function setW(w) { W = w; glyph.style.fontVariationSettings = `'wght' 800, 'wdth' ${w}`; out.textContent = 'WDTH ' + w.toFixed(1).padStart(5, '0'); slider.value = w; }
+function drawMetrics() {
+  const cv = document.createElement('canvas').getContext('2d'); cv.font = '800 170px "Anek Devanagari"';
+  const head = cv.measureText('न').actualBoundingBoxAscent || 118, desc = cv.measureText('स्कैन').actualBoundingBoxDescent || 30;
+  const base = 210, rows = [['HEADLINE · SHIROREKHA', base - head, Math.round(head / 170 * 1000)], ['BASELINE', base, 0], ['DESCENDER', base + Math.max(desc, 26) + 6, -Math.round((Math.max(desc, 26) + 6) / 170 * 1000)]];
+  lines.innerHTML = rows.map(([n, y, u]) => `<line x1="10" x2="590" y1="${y}" y2="${y}" stroke="currentColor" stroke-opacity=".35" stroke-width="1"/>
+    <text x="10" y="${y - 6}" font-size="10.5" letter-spacing="1.4" fill="currentColor" fill-opacity=".62">${n}  ${u} U</text>`).join('') +
+    `<line x1="585" x2="585" y1="40" y2="300" stroke="currentColor" stroke-opacity=".3"/>` +
+    Array.from({length: 27}, (_, i) => `<line x1="${i % 5 ? 579 : 573}" x2="585" y1="${40 + i * 10}" y2="${40 + i * 10}" stroke="currentColor" stroke-opacity=".4"/>`).join('');
+  svg.style.color = 'var(--ink)';
+}
+document.fonts && document.fonts.load('800 170px "Anek Devanagari"', 'स्कैन').then(drawMetrics, drawMetrics); drawMetrics();
+slider.addEventListener('input', () => { userSet = true; setW(Number(slider.value)); });
+setW(100);
+if (!reduce) { const t0 = performance.now(); (function tick(now) { if (!userSet) setW(100 + 25 * Math.sin((now - t0) / 1000 * Math.PI / 2)); requestAnimationFrame(tick); })(t0); }
+</script>
+</body>
+</html>
