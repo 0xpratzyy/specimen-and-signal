@@ -39,7 +39,7 @@ Posts were found with Grok (X and web search) on 28 Sep 2026 and each one was ch
 
 ## Run locally
 
-It's a single static page with no build step. Videos load through X's official embed.
+It's a single static page with no build step. Cards show each video's thumbnail; tapping one plays it in X's official player.
 
 ```bash
 python3 -m http.server 8000
