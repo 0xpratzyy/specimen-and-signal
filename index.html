@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Specimen & Signal</title>
-<meta name="description" content="Copy-paste prompts for dark, technical motion graphics that look like a measuring instrument.">
+<meta name="description" content="Viral videos made with Claude Opus 5.5, with the prompts behind them. Watch it, copy the prompt, run it.">
 <meta name="theme-color" content="#0b0b0c">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://specimen-and-signal.vercel.app/">
 <link rel="canonical" href="https://specimen-and-signal.vercel.app/">
-<meta property="og:title" content="Specimen &amp; Signal">
-<meta property="og:description" content="Copy-paste prompts for dark, technical motion graphics that look like a measuring instrument.">
+<meta property="og:title" content="Viral Opus 5.5 videos, with the prompts behind them">
+<meta property="og:description" content="Viral videos made with Claude Opus 5.5, with the prompts behind them. Watch it, copy the prompt, run it.">
 <meta property="og:image" content="https://specimen-and-signal.vercel.app/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -25,52 +25,58 @@
 :root{
   color-scheme:dark;
   --bg:#0b0b0c; --card:#141416; --line:rgba(237,230,218,.10); --text:#ede6da; --dim:rgba(237,230,218,.58);
-  --accent:#ff5a1f; --on-accent:#0b0b0c; --pre:#0f0f11;
+  --accent:#ff5a1f; --on-accent:#0b0b0c; --pre:#0f0f11; --chip:rgba(237,230,218,.07);
   --sans:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){color-scheme:light;--bg:#f5f3ef;--card:#ffffff;--line:rgba(11,11,12,.09);--text:#141416;--dim:rgba(20,20,22,.58);--on-accent:#ffffff;--pre:#f5f3ef}
+  :root:not([data-theme="dark"]){color-scheme:light;--bg:#f5f3ef;--card:#ffffff;--line:rgba(11,11,12,.09);--text:#141416;--dim:rgba(20,20,22,.58);--on-accent:#ffffff;--pre:#f6f4f0;--chip:rgba(11,11,12,.05)}
 }
-:root[data-theme="light"]{color-scheme:light;--bg:#f5f3ef;--card:#ffffff;--line:rgba(11,11,12,.09);--text:#141416;--dim:rgba(20,20,22,.58);--on-accent:#ffffff;--pre:#f5f3ef}
+:root[data-theme="light"]{color-scheme:light;--bg:#f5f3ef;--card:#ffffff;--line:rgba(11,11,12,.09);--text:#141416;--dim:rgba(20,20,22,.58);--on-accent:#ffffff;--pre:#f6f4f0;--chip:rgba(11,11,12,.05)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;padding-inline:clamp(16px,4vw,40px);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
 [hidden]{display:none!important}
 a{color:inherit}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.wrap{max-width:1200px;margin:0 auto}
+.wrap{max-width:1180px;margin:0 auto}
 .top{display:flex;justify-content:space-between;align-items:center;padding-block:18px}
 .brand{display:flex;align-items:center;gap:9px;font-weight:700;text-decoration:none;font-size:16px}
 .brand i{width:10px;height:10px;border-radius:50%;background:var(--accent)}
 .pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 13px;font-size:13px;text-decoration:none;color:var(--dim)}
 .pill b{color:var(--accent);font-weight:600}
-.hero{text-align:center;padding-block:clamp(28px,6vw,64px) clamp(26px,4vw,40px);display:flex;flex-direction:column;align-items:center;gap:14px}
-.hero h1{margin:0;font-size:clamp(30px,5.2vw,56px);line-height:1.04;font-weight:800;font-variation-settings:'wdth' 118;letter-spacing:-.015em;max-width:15ch;text-wrap:balance}
-.hero p{margin:0;color:var(--dim);max-width:46ch;font-size:16px;text-wrap:balance}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px;padding-bottom:36px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 8px 10px;display:flex;flex-direction:column;gap:6px}
-.thumb{padding:0;border:0;background:none;cursor:pointer;border-radius:10px;overflow:hidden;position:relative}
-.thumb img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;transition:transform .25s ease}
-.thumb:hover img{transform:scale(1.03)}
-.tag{position:absolute;left:8px;top:8px;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(11,11,12,.72);color:#ede6da;border-radius:999px;padding:3px 8px}
-.card h2{margin:4px 4px 0;font-size:15px;font-weight:700;line-height:1.25}
-.card p{margin:0 4px;color:var(--dim);font-size:13px;line-height:1.4;flex:1}
-.copy{margin-top:4px;border:0;border-radius:10px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:13.5px;padding:9px 10px;cursor:pointer}
+.hero{text-align:center;padding-block:clamp(26px,5vw,56px) clamp(22px,3vw,34px);display:flex;flex-direction:column;align-items:center;gap:14px}
+.hero h1{margin:0;font-size:clamp(30px,5vw,54px);line-height:1.05;font-weight:800;font-variation-settings:'wdth' 118;letter-spacing:-.015em;max-width:17ch;text-wrap:balance}
+.hero p{margin:0;color:var(--dim);max-width:44ch;font-size:16px;text-wrap:balance}
+.sec{display:flex;align-items:baseline;gap:10px;margin:26px 0 4px;font-size:20px;font-weight:800;font-variation-settings:'wdth' 112}
+.sec span{font-size:13px;font-weight:600;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 9px}
+.secp{margin:0 0 16px;color:var(--dim);font-size:14px;max-width:70ch}
+.cols{display:flex;gap:16px;align-items:flex-start;padding-bottom:12px}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.ch{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.who{font-weight:700;text-decoration:none}
+.who:hover{color:var(--accent)}
+.v{font-size:12.5px;color:var(--dim);background:var(--chip);border-radius:999px;padding:2px 9px}
+.what{margin:-4px 0 0;color:var(--dim);font-size:13.5px;line-height:1.4}
+.embed{min-height:120px;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.embed .twitter-tweet{margin:0!important}
+.fb{display:flex;align-items:center;justify-content:center;gap:8px;height:120px;border:1px dashed var(--line);border-radius:12px;text-decoration:none;color:var(--dim);font-size:14px}
+.fb b{width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-size:13px}
+.embed.ok .fb{display:none}
+.pl{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+.pl a{color:var(--accent);text-decoration:none;text-transform:none;letter-spacing:0;font-size:13px}
+.pl em{font-style:normal;color:var(--text)}
+pre{margin:0;padding:12px;border-radius:10px;background:var(--pre);border:1px solid var(--line);font-family:var(--mono);font-size:12.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word;max-height:200px;overflow:auto}
+.act{display:flex;gap:8px}
+.copy{flex:1;border:0;border-radius:10px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:13.5px;padding:10px;cursor:pointer}
 .copy.done{background:var(--text);color:var(--bg)}
-footer{border-top:1px solid var(--line);padding-block:18px 28px;color:var(--dim);font-size:13px;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between}
-dialog{border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--text);padding:0;width:min(680px,calc(100% - 32px));max-height:min(86vh,860px)}
-dialog::backdrop{background:rgba(0,0,0,.55)}
-.dh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
-.dh h3{margin:0;font-size:16px}
-.x{border:1px solid var(--line);background:none;border-radius:999px;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1}
-dialog pre{margin:0;padding:16px;font-family:var(--mono);font-size:12.5px;line-height:1.6;white-space:pre-wrap;word-break:break-word;max-height:calc(min(86vh,860px) - 140px);overflow:auto;background:var(--pre)}
-.df{padding:12px 16px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}
-.df .copy{padding:10px 18px;margin:0}
+.ghost{border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13.5px;text-decoration:none;white-space:nowrap}
+.ghost:hover{border-color:var(--accent)}
+.note{font-size:12.5px;color:var(--dim)}
+.note a{color:var(--text)}
+footer{border-top:1px solid var(--line);margin-top:24px;padding-block:18px 30px;color:var(--dim);font-size:13px;line-height:1.6}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--text);color:var(--bg);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;z-index:10}
-@media (max-width:420px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card h2{font-size:14px}.card p{font-size:12.5px}}
-@media (prefers-reduced-motion:reduce){.thumb img{transition:none}}
 </style>
 </head>
 <body>
@@ -81,140 +87,64 @@ dialog pre{margin:0;padding:16px;font-family:var(--mono);font-size:12.5px;line-h
   </header>
   <main>
     <section class="hero">
-      <span class="pill"><b>13 prompts</b> · free to copy</span>
-      <h1>Motion graphic prompts. Copy, paste, render.</h1>
-      <p>Dark, technical animations that look like a measuring instrument. Paste a prompt into Claude or any coding model and fill in the {braces}.</p>
+      <span class="pill"><b>23 viral videos</b> · prompts included</span>
+      <h1>Viral Opus 5.5 videos, with the prompts behind them</h1>
+      <p>Watch it, copy the prompt, paste it into Claude Opus 5.5 and run it.</p>
     </section>
-    <section class="grid" id="grid" aria-label="Prompts"></section>
+    <h2 class="sec">Prompts from the creators <span>11</span></h2>
+    <p class="secp">Copied word for word from their posts on X, linked to the original.</p>
+    <div class="cols" id="gc"></div>
+    <h2 class="sec">Starter prompts for the rest <span>12</span></h2>
+    <p class="secp">These creators didn't post a short prompt. We wrote a starter prompt for each so you can make something similar. Where a creator shared a long prompt, it's linked on the card. Fill in the {braces}.</p>
+    <div class="cols" id="gs"></div>
   </main>
-  <footer><span>Fonts: Anek Devanagari, Archivo, JetBrains Mono, Instrument Serif, Kalam (Google Fonts)</span><span>Stills from our UPI explainer reel</span></footer>
+  <footer>Videos are embedded from X and belong to their creators. Quoted prompts are copied from the creators' public posts and link back to them. Starter prompts are ours, free to copy. Views as of 28 Sep 2026.</footer>
 </div>
-<dialog id="dlg" aria-labelledby="dlgTitle">
-  <div class="dh"><h3 id="dlgTitle"></h3><button class="x" id="dlgClose" aria-label="Close">✕</button></div>
-  <pre id="dlgText"></pre>
-  <div class="df"><button class="copy" id="dlgCopy">Copy prompt</button></div>
-</dialog>
 <div class="toast" id="toast" hidden>Copied</div>
 <script>
-const LOOK = `Build a 9:16 motion graphic as one self-contained HTML file with a single 720×1280 SVG, rendered at 1080×1920, 24 fps.
-
-LOOK: a precision scientific instrument.
-- Background #0a0a0b with a faint 40 px grid.
-- Type and lines in cream #ede6da. Use opacity for hierarchy: 100 / 60 / 35 / 15 %.
-- One signal colour, orange #ff5a1f, only on the thing that matters right now.
-- Fonts (Google Fonts): Anek Devanagari 800 for giant hero letters, with the width axis animating 75→125; Archivo 800 at width 125, in caps, for headlines; JetBrains Mono caps for tiny labels; Instrument Serif italic for one quiet line; Kalam for a handwritten note.
-- Hairlines 1.25 px, crosshair nodes, callout lines with small mono readouts.
-
-MOTION: lines draw on, numbers count up, elements snap on with a 2-frame flicker. No bounce. Land each visual exactly on its beat word.
-
-CODE: window.renderFrame(t) draws the whole frame for time t in seconds. No CSS animations or Math.random, so it renders frame by frame.`;
-
-const PAPER = `Build a 9:16 motion graphic as one self-contained HTML file with a single 720×1280 SVG, rendered at 1080×1920, 24 fps.
-
-LOOK: an inverted paper page from a precision instrument.
-- Cream paper #ede6da with a visible fibre texture and faint ruled lines.
-- Black ink #0a0a0b for all type and lines. No orange.
-- A red rubber stamp #d1242a: bold caps in a double-rule box, distressed ink, rotated a few degrees. It slams in on its beat (scale 1.25 → 1 in 3 frames).
-- Fonts (Google Fonts): Archivo 800 at width 125, in caps, for headlines; JetBrains Mono caps for printed text; Kalam for handwritten notes.
-
-MOTION: lines draw on, text prints or types out. No bounce. Land each visual exactly on its beat word.
-
-CODE: window.renderFrame(t) draws the whole frame for time t in seconds. No CSS animations or Math.random, so it renders frame by frame.`;
-
-const SHOT = (beats) => `SHOT: {DURATION} s. Narration: "{LINE}"
-Beats (seconds from the start of the shot): ${beats}`;
-
-const FULL = `Use this at the start of a session, then describe each shot.
-
-You are a motion designer and front-end engineer. Build each shot as one self-contained HTML page with a single 720×1280 SVG, rendered at 1.5× to 1080×1920, 24 fps.
-
-LOOK: a precision scientific instrument measuring the subject. Glyph specimens with metric lines, live plots, ray diagrams, spectrograms, 3D wireframe grids, callout lines with small data readouts. Calm, exact, premium. Never cartoonish.
-
-PALETTE (nothing else)
-- background #0a0a0b with a faint measurement grid: cream at 5–6 %, 40 px cells, small + marks
-- signal orange #ff5a1f: only the one thing that matters right now; max two orange elements on screen; flat, no gradients
-- cream #ede6da for all type and lines; hierarchy by opacity only: 100 / 60 / 35 / 15 / 6 %
-- paper scenes only: cream paper with fibre texture, black ink #0a0a0b, red rubber stamp #d1242a, no orange
-
-TYPE (Google Fonts)
-- hero letters: Anek Devanagari 800, width axis animated 75↔125, 180–460 px
-- Latin display: Archivo 800–900, width 125, caps, tracking −0.01em, 44–150 px
-- labels: JetBrains Mono 500, caps, tracking 0.12em, 11–16 px
-- quiet lines: Instrument Serif italic, 36–84 px
-- margin notes: Kalam, rotated −5°…+3°, with a hand-drawn arrow
-
-GLYPH SPECIMEN: a giant glyph with full-width hairlines for HEADLINE, BASELINE and DESCENDER, each labelled in tiny mono with a value, a side ruler and a live WDTH readout. Measure the lines from the rendered glyph after fonts load.
-
-MOTION: draw-ons with outExpo, snap-ons with a 2-frame flicker (0 → 1 → .35 → 1), counters ticking in mono, scanning cursors. No bounce or elastic. Land each visual on the moment the narrator says its word. Keep something moving until the last frame. Cuts are hard, so show the first element within 2 frames.
-
-CODE: window.setup() builds the SVG; window.renderFrame(t) sets the whole frame for time t. No CSS animations, transitions, requestAnimationFrame or Math.random (use a seeded RNG).
-
-LEAVE FOR THE EDIT: grain, vignette, bloom, flashes, glitches and camera shake. Keep the top and bottom 80 px clear.`;
-
-const P = [
- {img:'look', title:'The whole look', line:'Palette, fonts and motion rules for every shot.', text:FULL},
- {img:'chronometer', title:'Chronometer', line:'A giant Devanagari numeral in a sweeping dial.', beats:'{WORD_1} {T1}, {WORD_2} {T2}',
-  scene:'SCENE: a giant Devanagari numeral {NUMERAL} (about 460 px) as a type specimen: full-width metric lines (headline, baseline, descender) labelled in tiny mono, and its width sweeping 75→125. Around it, a precision dial with 100 ticks and an orange hand sweeping one turn. On {WORD_1} a mono readout {READOUT} flickers on. On {WORD_2} the word {WORD} snaps in underneath.'},
- {img:'trajectory', title:'Road trip', line:'A data packet crosses a wireframe terrain.', beats:'{WORD_1} {T1}, {WORD_2} {T2}',
-  scene:'SCENE: a slowly rotating wireframe terrain fills the lower two thirds. A small orange data packet tagged {LABEL} travels a looping dashed route over it, past crosshair waypoints {WAYPOINTS}. On {WORD_1} an Instrument Serif line appears: {LINE_ON_SCREEN}. On {WORD_2} its last word gets a hand-drawn orange underline.'},
- {img:'qr-build', title:'QR build', line:'A matrix builds line by line, then locks on.', beats:'{WORD} {T}',
-  scene:'SCENE: a tiny label {STEP} at the top left. A fictional QR-style matrix (29×29, about 420 px, no real data) builds module by module behind a scan line, with callouts naming its parts. On {WORD} the build completes, four orange corner brackets lock on, and the headline {HEADLINE} snaps in.'},
- {img:'decode', title:'Decode', line:'Code turns into plain text under a camera reticle.', beats:'{WORD_1} {T1}, {WORD_2} {T2}',
-  scene:'SCENE: the matrix shrinks to the top and dissolves into lines of mono text that scramble into place: {TEXT_LINES}. On {WORD_1} an Instrument Serif line {LINE_ON_SCREEN} appears and an orange strike-through draws across it. On {WORD_2} a camera reticle snaps around the text: focus brackets, a crosshair and "AF · LOCK".'},
- {img:'cipher', title:'Cipher', line:'A PIN locks in and only one ray reaches the key.', beats:'{WORD_1} {T1}, {WORD_2} {T2}, {WORD_3} {T3}',
-  scene:'SCENE: four input dots flow into a block of scrambling hex bytes. On {WORD_1} a line-drawn padlock closes around it. Dashed rays reach three nodes: {NODE_A}, {NODE_B}, {NODE_C}. On {WORD_2} the first two rays end in small ✕ marks. On {WORD_3} only the ray to {NODE_C} turns orange and a key appears there, with the serif line {LINE_ON_SCREEN}.'},
- {img:'timing', title:'Timeline', line:'A timing plot fills up to a total.', beats:'{WORD} {T}',
-  scene:'SCENE: a Gantt timing plot. Rows with mono labels: {STEPS}. Bars fill left to right on a 0–{TOTAL} s axis while a scan cursor sweeps. On {WORD} a big orange readout "Σ {TOTAL} S" lands, with the serif line {LINE_ON_SCREEN} under it.'},
- {img:'volume', title:'Big number', line:'A counter spins up to a huge number.', beats:'{WORD_1} {T1}, {WORD_2} {T2}, {WORD_3} {T3}',
-  scene:'SCENE: a Devanagari specimen {NUMBER_IN_DEVANAGARI} with metric lines and a small gloss {GLOSS}. On {WORD_1} an orange counter spins up and lands on {NUMBER} exactly on {WORD_2}. On {WORD_3} a small rising curve draws and ends in an orange marker {MARKER}.'},
- {img:'never', title:'Truth table', line:'A yes, a never, then a big Hindi "never".', beats:'{WORD_1} {T1}, {WORD_2} {T2}, {WORD_3} {T3}',
-  scene:'SCENE: a two-row truth table, {ROW_A} and {ROW_B}, with one column {COLUMN}. On {WORD_1} row A shows "✓ YES". On {WORD_2} row B shows "✕ NEVER" in orange. On {WORD_3} a Devanagari specimen {HINDI_WORD} lands below with metric lines, plus the serif line {LINE_ON_SCREEN}.'},
- {img:'ledger', paper:true, title:'Ledger stamp', line:'A ruled ledger on paper, then SETTLED.', beats:'{WORD_1} {T1}, {WORD_2} {T2}, {WORD_3} {T3}',
-  scene:'SCENE: a ruled ink ledger with columns {COLUMNS} and rows {ROWS}; handwritten tallies appear one by one. On {WORD_1} the headline {HEADLINE}. On {WORD_2} a NET row sums them. On {WORD_3} the red stamp {STAMP} slams in. End with a handwritten note {NOTE}.'},
- {img:'receipt', paper:true, title:'Receipt stamp', line:'A receipt prints, then FAILED.', beats:'{WORD_1} {T1}, {WORD_2} {T2}',
-  scene:'SCENE: a narrow thermal receipt printed in mono ink: {RECEIPT_LINES}. On {WORD_1} the line "DEBITED ✓" prints. On {WORD_2} a big red FAILED stamp slams diagonally across it, and a red handwritten note {NOTE} appears with an arrow.'},
- {img:'scam', paper:true, title:'Scam stamp', line:'A message types out, then SCAM.', beats:'{WORD_1} {T1}, {WORD_2} {T2}',
-  scene:'SCENE: a printed chat with "INCOMING MESSAGE" and "UNKNOWN NUMBER", then the message types out: {MESSAGE}. On {WORD_1} a red handwritten note {NOTE} appears with an arrow. On {WORD_2} a huge red SCAM stamp slams over the message.'},
- {img:'film-specimen', title:'Film card', line:'An old film clip framed as a specimen, with a joke.', text:`Frame a short film clip (public-domain or licensed) as a specimen card in a 9:16 video.
-
-- Background #0a0a0b with a faint 60 px grid. Tone the clip to cream-on-black (#0a0a0b → #ede6da) and frame it 960 px wide with a thin cream border, corner brackets and tick marks.
-- Above it: tiny mono labels "REACTION SPECIMEN {N}/{TOTAL}" and "PUBLIC DOMAIN {YEAR}", then the joke {CAPTION} in Archivo wide caps, at most two lines, with the key word in orange #ff5a1f.
-- Below it: a handwritten orange credit "{FILM}, {YEAR}" (Kalam) with a small arrow.
-- The card punches in 4 % over the first 4 frames. The narration pauses here, so let the music carry it.`},
-];
-P.forEach(p => { if (!p.text) p.text = (p.paper ? PAPER : LOOK) + '\n\n' + SHOT(p.beats) + '\n\n' + p.scene; });
-
-const grid = document.getElementById('grid');
-P.forEach((p, i) => {
-  const a = document.createElement('article'); a.className = 'card';
-  a.innerHTML = `<button class="thumb" data-open="${i}" aria-label="Show the ${p.title} prompt"><img src="img/${p.img}.jpg" alt="" loading="lazy" width="270" height="480">${p.paper ? '<span class="tag">Paper</span>' : ''}</button>
-    <h2></h2><p></p><button class="copy" data-copy="${i}">Copy prompt</button>`;
-  a.querySelector('h2').textContent = p.title; a.querySelector('p').textContent = p.line;
-  grid.appendChild(a);
-});
-
-const toast = document.getElementById('toast'); let tt;
-function showToast(m) { toast.textContent = m; toast.hidden = false; clearTimeout(tt); tt = setTimeout(() => toast.hidden = true, 1500); }
-async function copy(text, btn, node) {
-  try {
-    await navigator.clipboard.writeText(text); showToast('Copied');
-    if (btn) { btn.classList.add('done'); btn.textContent = 'Copied'; setTimeout(() => { btn.classList.remove('done'); btn.textContent = 'Copy prompt'; }, 1400); }
-  } catch (e) {
-    if (node) { const r = document.createRange(); r.selectNodeContents(node); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
-    showToast('Selected: press Ctrl/⌘ + C');
-  }
+const DATA = {"creator": [{"id": "2103315922098470926", "url": "https://x.com/stephanlivera/status/2103315922098470926", "handle": "stephanlivera", "views": 1916676, "views_txt": "1.9M views", "what": "15-second motion-design showreel Opus 5.5 made on max effort from one sentence.", "kind": "creator", "prompt": "make a dynamic 15-second motion graphics video that shows what an incredible motion designer you are, like it's your showreel for a résumé. go all out.", "prompt_by": "stephanlivera", "prompt_url": "https://x.com/stephanlivera/status/2103315922098470926", "reruns": [{"handle": "robj3d3", "url": "https://x.com/robj3d3/status/2103875898349088830", "note": "4K"}, {"handle": "leonabboud", "url": "https://x.com/leonabboud/status/2103576084499358051", "note": ""}]}, {"id": "2102787937482252537", "url": "https://x.com/deedydas/status/2102787937482252537", "handle": "deedydas", "views": 340975, "views_txt": "341K views", "what": "26-second instructional launch video for an inference startup, made in about a minute.", "kind": "creator", "prompt": "make a modern slick and punchy video for a modern startup that works on inference", "prompt_by": "deedydas", "prompt_url": "https://x.com/deedydas/status/2102787937482252537"}, {"id": "2102724864205566388", "url": "https://x.com/TheHunterBohm/status/2102724864205566388", "handle": "TheHunterBohm", "views": 242488, "views_txt": "242K views", "what": "20-second motion graphic comparing Opus 5.5 and GPT-6 Sol on the same prompt.", "kind": "creator", "prompt": "Make a 20-second motion graphic that explains how an AI language model turns a prompt into an answer, and why a long answer costs more… The charts then break apart into pixel blocks, and those pixel blocks rebuild into the explanation.", "prompt_by": "TheHunterBohm", "prompt_url": "https://x.com/TheHunterBohm/status/2102724876092277172"}, {"id": "2104013515623170390", "url": "https://x.com/DanielSmidstrup/status/2104013515623170390", "handle": "DanielSmidstrup", "views": 106239, "views_txt": "106K views", "what": "ClimbX product motion video Opus 5.5 made in 20 minutes from one prompt.", "kind": "creator", "prompt": "Make a dynamic 30-second motion graphics video that shows what an incredible motion designer you are, like it's your showreel for a résumé. go all out.  Make it a video to introduce http://typingmind.com Use actual product screenshot/logo/assets Must have music and motion must match the music  Do it like a real professional production video, not like a demo or prototype. Add more animation and motion design; avoid using screenshots as raw; instead, break them down into components/icons so we can animate those too. Make the motions more juicy. Use the best motion design techniques you can.", "prompt_by": "tdinh_me", "prompt_url": "https://x.com/tdinh_me/status/2103796614771179929"}, {"id": "2103066071838466494", "url": "https://x.com/moritzkremb/status/2103066071838466494", "handle": "moritzkremb", "views": 90171, "views_txt": "90K views", "what": "SaaS product-launch motion video; Opus picked the product itself.", "kind": "creator", "prompt": "I want you to create a highly professional SaaS product launch video. Go and find some SaaS, preferably just one that people know, so it's easier to identify with it. Pick that, and then make sure to get actual assets and images and all of that stuff from the internet. Turn it into these typical, very professionally edited, motion-graphics-styled product launch videos that you see people making on Twitter when they launch new SaaS products (which are showing off the features, the benefits, and all of these things).", "prompt_by": "moritzkremb", "prompt_url": "https://x.com/moritzkremb/status/2103066083905417476"}, {"id": "2103837519615774895", "url": "https://x.com/MiaAI_lab/status/2103837519615774895", "handle": "MiaAI_lab", "views": 81391, "views_txt": "81K views", "what": "Live shader film 'let there be': a typed word seeds the picture and the music.", "kind": "creator", "prompt": "Build me something when people see it, they will say \"Wow\". Must be immersive, when people see it, they will be stunned by what they see.\n\nThis can be a video, or anything else you can think of.\n\nBe creative. Go wild. Dig deep.\n\nNo AI slop. Something unique, think outside of the box. Think big. Think amazing. Something no other model done before.\n\nBe proud. Show your best. Don't disappoint.", "prompt_by": "MiaAI_lab", "prompt_url": "https://x.com/MiaAI_lab/status/2103837523952763081"}, {"id": "2102853258582880547", "url": "https://x.com/Ror_Fly/status/2102853258582880547", "handle": "Ror_Fly", "views": 74503, "views_txt": "75K views", "what": "30-second cocktail recipe motion graphic rendered in HTML from one photo.", "kind": "creator", "prompt": "We're going to try a little test. Do you think you could render a recipe motion graphic animation using javascript or html (w/e you think will produce the best) to show the full recipe from start to finish (empty glass to completed cocktail) - Explainer video style - Showing the recipe ingreidents + measurements as they're going into the cup. Should be a 30s video.", "prompt_by": "Ror_Fly", "prompt_url": "https://x.com/Ror_Fly/status/2102853258582880547"}, {"id": "2103912457836323096", "url": "https://x.com/SebastianRoehl/status/2103912457836323096", "handle": "SebastianRoehl", "views": 45174, "views_txt": "45K views", "what": "Vertical 15-second one-shot showreel that also mentions recent app updates.", "kind": "creator", "prompt": "make a dynamic 15-second motion graphics video that shows what an incredible motion designer you are. Highlight the recent changes we made with the last few updates.", "prompt_by": "SebastianRoehl", "prompt_url": "https://x.com/SebastianRoehl/status/2103912457836323096"}, {"id": "2103557735086428547", "url": "https://x.com/kloss_xyz/status/2103557735086428547", "handle": "kloss_xyz", "views": 44487, "views_txt": "44K views", "what": "90-second motion-design demo whose piano score Opus composed.", "kind": "creator", "prompt": "make a dynamic 16:9 aspect ratio 90-second motion graphics video that shows exactly what an incredible motion designer you are and your true creative limits, like it's your showreel for a résumé. use s tier sound design, no synth. go all out. compose your own original and viral piano score. export it as a 1080p mp4 for social media.", "prompt_by": "kloss_xyz", "prompt_url": "https://x.com/kloss_xyz/status/2103560107921723834"}, {"id": "2103499977632997524", "url": "https://x.com/alex_prompter/status/2103499977632997524", "handle": "alex_prompter", "views": 40273, "views_txt": "40K views", "what": "30-second single-page HTML explainer, meant to be screen-recorded from chat.", "kind": "creator", "prompt": "Adopt the role of an expert motion designer. Build a 30-second animated explainer for my business as a single HTML page. 5 scenes. The customer's problem, what I do, how it works in 3 steps, one proof point, and my name at the end. Bold text, smooth transitions, my brand colours. My business [DESCRIBE WHAT YOU SELL, WHO IT'S FOR AND YOUR COLOURS]", "prompt_by": "alex_prompter", "prompt_url": "https://x.com/alex_prompter/status/2103499977632997524"}, {"id": "2103128559174971663", "url": "https://x.com/LinearUncle/status/2103128559174971663", "handle": "LinearUncle", "views": 22185, "views_txt": "22K views", "what": "Manim lesson video explaining derivatives, with edge-tts narration.", "kind": "creator", "prompt": "请用Manim给我制作一个导数概念学习的视频，要求通俗易懂，并且有例子，引人思考。配音使用edge-tts", "prompt_by": "LinearUncle", "prompt_url": "https://x.com/LinearUncle/status/2103128559174971663"}], "starter": [{"id": "2102801274173587569", "url": "https://x.com/donaldjewkes/status/2102801274173587569", "handle": "donaldjewkes", "views": 3469494, "views_txt": "3.5M views", "what": "One spoken prompt became a 12-hour Opus 5.5 remake of the Claude Pop music video.", "kind": "starter", "prompt": "Make a complete music video for the song at {AUDIO_FILE} ({LENGTH} long) and keep working until it is finished. Plan it first: a lead character, a visual world and a shot list timed to the song's sections and lyrics. Draw everything in code (p5.js or canvas) with a hand-made paper-cut look, animate the lyrics as typography on the beat, and render frame by frame with a headless browser and ffmpeg at 1920×1080, 30 fps. Check each section as stills before the final render.", "why": "long", "their_prompt_url": "https://x.com/donaldjewkes/status/2102801469976248500"}, {"id": "2102591147927654847", "url": "https://x.com/RyanSael/status/2102591147927654847", "handle": "RyanSael", "views": 3320331, "views_txt": "3.3M views", "what": "One-shot interactive lens lab that shows camera focus by moving glass elements.", "kind": "starter", "prompt": "Explain how camera focus works by building an interactive lens lab in one HTML file with three.js. Show a lens barrel with glass elements and a focus ring the viewer can turn; as it turns, the elements slide and a sharp focal plane moves through a small scene with objects at different depths. Draw the light rays converging, add live readouts for focus distance and aperture, and blur what is out of focus. Make it feel like a premium product lab.", "why": "none"}, {"id": "2102514581684052169", "url": "https://x.com/other__reality/status/2102514581684052169", "handle": "other__reality", "views": 2612312, "views_txt": "2.6M views", "what": "Painted p5.js music video for I'm Upping My P(doom), made in Claude Code.", "kind": "starter", "prompt": "Turn the song at {AUDIO_FILE} into a painted music video in p5.js with a brush library, so every frame looks hand-painted with visible strokes. Write a deterministic render(frame) function, capture frames with headless Chrome and encode with ffmpeg at 1280×720. Plan scenes for each section of the song, keep one palette throughout, and let the strokes move with the music's energy.", "why": "none"}, {"id": "2103116235009347650", "url": "https://x.com/WinterArc2125/status/2103116235009347650", "handle": "WinterArc2125", "views": 614122, "views_txt": "614K views", "what": "Five-minute code-rendered film of the Battle of Austerlitz with a real terrain and sunrise.", "kind": "starter", "prompt": "Make a {N}-minute film about {HISTORICAL_EVENT} entirely in code: a WebGL renderer with real terrain for the location, sunrise light, fog and smoke, thousands of animated units in formation, and a camera that moves like a documentary. Write a short narration, synthesize the voice and a score, and render frame by frame to MP4 with ffmpeg. It should feel like a historical film, not a strategy game.", "why": "long", "their_prompt_url": "https://x.com/WinterArc2125/status/2103116689944502720"}, {"id": "2102463453176979794", "url": "https://x.com/edwinarbus/status/2102463453176979794", "handle": "edwinarbus", "views": 387613, "views_txt": "388K views", "what": "Procedural Antikythera-inspired game in one 3 MB HTML file, with sound.", "kind": "starter", "prompt": "Build a small playable game in one HTML file with three.js, inspired by {HISTORICAL_OBJECT}: dive underwater to find it, with schools of fish, swaying seagrass and floating particles, then inspect the object as a geared model you can turn. Generate every visual and sound in code with no external assets, and keep it smooth in the browser.", "why": "none"}, {"id": "2102844654169575547", "url": "https://x.com/kimmonismus/status/2102844654169575547", "handle": "kimmonismus", "views": 193833, "views_txt": "194K views", "what": "Three-minute history-of-AI film, every frame drawn in code.", "kind": "starter", "prompt": "Make a {LENGTH}-minute explainer video about {TOPIC} in Remotion (React and TypeScript), with every frame drawn in code as SVG and canvas. Write the script, generate the narration with an open-source text-to-speech model, and compose a simple score in Python. Build each diagram up on the narration's key words and render at 1920×1080, 30 fps.", "why": "none"}, {"id": "2102531681450119426", "url": "https://x.com/Voxyz_ai/status/2102531681450119426", "handle": "Voxyz_ai", "views": 123267, "views_txt": "123K views", "what": "JS short 'small print': requests become stars, with synthesized music.", "kind": "starter", "prompt": "Make a 30-second square (2160×2160) animated short in one index.html with no image assets, about {STORY_IN_ONE_LINE}. Draw every character and object in code, end on a quiet moment instead of a logo, compose a gentle score in Python, and render it frame by frame.", "why": "none"}, {"id": "2102493303388475855", "url": "https://x.com/cherry_mx_reds/status/2102493303388475855", "handle": "cherry_mx_reds", "views": 118268, "views_txt": "118K views", "what": "14-minute one-shot 'Oktoberfest' character animation.", "kind": "starter", "prompt": "Make a long one-shot character animation about {THEME}: a small cast of simple characters, a scene plan with gags, everything drawn in code. Use only the audio samples in ./audio for sound, with no synthesis. Render frame by frame at 1920×1080 and keep going until the whole piece is done.", "why": "reply", "their_prompt_url": "https://x.com/cherry_mx_reds/status/2102493305992880314"}, {"id": "2103117246860345550", "url": "https://x.com/Voxyz_ai/status/2103117246860345550", "handle": "Voxyz_ai", "views": 117157, "views_txt": "117K views", "what": "Interactive black-hole lab that bends the sky into gravitational arcs.", "kind": "starter", "prompt": "Explain gravitational lensing by building an interactive black-hole lab in one HTML file: drag a black hole across a star field and the sky bends into arcs, forming a full Einstein ring when it lines up with a background galaxy. Add controls for mass and distance, clean labels and a one-line caption explaining what is happening. Take screenshots, critique the look and refine it a few times.", "why": "none"}, {"id": "2103959324385300552", "url": "https://x.com/notdwd/status/2103959324385300552", "handle": "notdwd", "views": 98726, "views_txt": "99K views", "what": "Frame-locked Opus 5.5 rebuild of a Goji Berry launch video, swapped to his brand.", "kind": "starter", "prompt": "Rebuild the reference video at {REFERENCE_VIDEO} frame for frame as code for my brand {BRAND}: one HTML page with a seek(t) function, rendered with Playwright and encoded with ffmpeg. Measure the reference first with a script (cuts, timings, positions, colours), then match each shot and swap in my product, copy and colours. Compare your frames with the reference side by side and fix the differences before the final render.", "why": "long", "their_prompt_url": "https://x.com/notdwd/status/2103959830423859595"}, {"id": "2104148233106723099", "url": "https://x.com/LexnLin/status/2104148233106723099", "handle": "LexnLin", "views": 70472, "views_txt": "70K views", "what": "33-second launch film for a fake calendar app, picture and soundtrack both code.", "kind": "starter", "prompt": "Make a 30-second launch film for a made-up app called {APP_NAME} ({ONE_LINE_PITCH}) in Remotion. Design the name, logo and UI yourself, show the product in use with smooth interface motion, and end on the logo. Compose an original soundtrack and sound effects in Python. 1920×1080, 30 fps.", "why": "none"}, {"id": "2104138101102621133", "url": "https://x.com/notdwd/status/2104138101102621133", "handle": "notdwd", "views": 46926, "views_txt": "47K views", "what": "7.5-second prompt-to-landing-page motion piece, sound included, made in 15 minutes.", "kind": "starter", "prompt": "Make a 7-second motion piece that shows a prompt being typed and turning into a finished landing page for {PRODUCT}. Use one HTML file, capture frames with Playwright and encode with ffmpeg, and add a UI sound to every key moment. Keep it fast and satisfying.", "why": "long", "their_prompt_url": "https://x.com/notdwd/status/2104138101102621133"}]};
+const theme = matchMedia('(prefers-color-scheme: light)').matches && document.documentElement.dataset.theme !== 'dark' || document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+function link(href, text, cls) { const a = el('a', cls, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; }
+function card(c) {
+  const a = el('article', 'card');
+  const ch = el('div', 'ch'); ch.append(link('https://x.com/' + c.handle, '@' + c.handle, 'who'), el('span', 'v', c.views_txt)); a.append(ch);
+  a.append(el('p', 'what', c.what));
+  const em = el('div', 'embed'); em.dataset.id = c.id;
+  const fb = link(c.url, '', 'fb'); fb.innerHTML = '<b>▶</b> Watch on X'; em.append(fb); a.append(em);
+  const pl = el('div', 'pl');
+  if (c.kind === 'creator') { pl.append('Prompt by '); pl.append(link(c.prompt_url, '@' + c.prompt_by)); if (c.prompt_by !== c.handle) pl.append(el('em', null, ' · video by @' + c.handle)); }
+  else pl.textContent = 'Starter prompt · ours';
+  a.append(pl);
+  const pre = el('pre', null, c.prompt); a.append(pre);
+  const act = el('div', 'act'); const b = el('button', 'copy', 'Copy prompt'); b.type = 'button';
+  b.addEventListener('click', () => copy(c.prompt, b, pre)); act.append(b, link(c.url, 'Post ↗', 'ghost')); a.append(act);
+  if (c.reruns) { const n = el('div', 'note', 'Re-runs of this prompt: '); c.reruns.forEach((r, i) => { if (i) n.append(' · '); n.append(link(r.url, '@' + r.handle + (r.note ? ' (' + r.note + ')' : ''))); }); a.append(n); }
+  if (c.their_prompt_url) { const n = el('div', 'note'); n.append(c.why === 'reply' ? 'Their prompt is in the replies: ' : 'Their full (long) prompt: '); n.append(link(c.their_prompt_url, 'open on X ↗')); a.append(n); }
+  return a;
 }
-const dlg = document.getElementById('dlg'), dText = document.getElementById('dlgText'), dTitle = document.getElementById('dlgTitle'), dCopy = document.getElementById('dlgCopy');
-let cur = 0;
-function open(i) { cur = i; dTitle.textContent = P[i].title; dText.textContent = P[i].text; dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''); }
-document.addEventListener('click', e => {
-  const o = e.target.closest('[data-open]'); if (o) return open(+o.dataset.open);
-  const c = e.target.closest('[data-copy]');
-  if (c) { const i = +c.dataset.copy; if (navigator.clipboard) copy(P[i].text, c, null); else open(i); }
-});
-dCopy.addEventListener('click', () => copy(P[cur].text, dCopy, dText));
-document.getElementById('dlgClose').addEventListener('click', () => dlg.close());
-dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+function layout(id, list) {
+  const host = document.getElementById(id); const n = Math.max(1, Math.min(3, Math.floor(host.clientWidth / 340)));
+  if (host.dataset.n == n) return; host.dataset.n = n;
+  const cols = Array.from({length: n}, () => el('div', 'col'));
+  list.forEach((c, i) => cols[i % n].append(c._el || (c._el = card(c))));
+  host.replaceChildren(...cols);
+}
+function all() { layout('gc', DATA.creator); layout('gs', DATA.starter); observe(); }
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(all, 150); });
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); embed(e.target); } }), {rootMargin: '900px 0px'}) : null;
+function observe() { document.querySelectorAll('.embed:not([data-seen])').forEach(e => { e.dataset.seen = 1; io ? io.observe(e) : embed(e); }); }
+function whenTwttr(cb, k = 0) { if (window.twttr && twttr.widgets && twttr.widgets.createTweet) cb(); else if (k < 80) setTimeout(() => whenTwttr(cb, k + 1), 250); }
+function embed(e) { whenTwttr(() => twttr.widgets.createTweet(e.dataset.id, e, {theme, dnt: true, conversation: 'none', align: 'center'}).then(t => { if (t) e.classList.add('ok'); }).catch(() => {})); }
+const toast = document.getElementById('toast'); let tt;
+function show(m) { toast.textContent = m; toast.hidden = false; clearTimeout(tt); tt = setTimeout(() => toast.hidden = true, 1500); }
+async function copy(text, btn, node) {
+  try { await navigator.clipboard.writeText(text); show('Copied'); btn.classList.add('done'); btn.textContent = 'Copied';
+        setTimeout(() => { btn.classList.remove('done'); btn.textContent = 'Copy prompt'; }, 1400); }
+  catch (err) { const r = document.createRange(); r.selectNodeContents(node); const s = getSelection(); s.removeAllRanges(); s.addRange(r); show('Selected: press Ctrl/⌘ + C'); }
+}
+all();
 </script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
