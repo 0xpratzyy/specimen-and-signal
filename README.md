@@ -39,7 +39,7 @@ Posts were found with Grok (X and web search) on 28 Sep 2026 and each one was ch
 
 ## Run locally
 
-It's a single static page with no build step. Cards show each video's thumbnail; tapping one plays it in X's official player.
+It's a single static page with no build step. Videos play inline, streamed from X's own video servers (the page sends no referrer), and filter chips group them by type: motion design, launch videos, explainers, interactive 3D, and films & music.
 
 ```bash
 python3 -m http.server 8000
@@ -47,4 +47,4 @@ python3 -m http.server 8000
 
 ## Credits
 
-Videos are embedded from X and belong to their creators. Quoted prompts belong to the people who wrote them and link back to their posts. Starter prompts are free to copy.
+Videos stream from X and belong to their creators; nothing is re-uploaded, and a deleted post stops playing. Quoted prompts belong to the people who wrote them and link back to their posts. Starter prompts are free to copy.
