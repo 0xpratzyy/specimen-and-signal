@@ -18,6 +18,7 @@ Community lists that helped find posts: [yihui-dev/awesome-opus5-5-videos](https
 
 | Video | Type | Views | Prompt |
 |---|---|---|---|
+| [@pratyushrungta](https://x.com/pratyushrungta/status/2104525735713206557) | Films & music | 64K | Pinned. Prompt to make this video |
 | [@stephanlivera](https://x.com/stephanlivera/status/2103315922098470926) | Motion design | 2.1M | Creator's prompt by [@shneural](https://x.com/shneural/status/2103151003272962130) (video by @stephanlivera) |
 | [@johnknopf](https://x.com/johnknopf/status/2103698854399099057) | Films & music | 712K | Creator's prompt by [@johnknopf](https://x.com/johnknopf/status/2103887126035353707) |
 | [@noahwachnik](https://x.com/noahwachnik/status/2102470200415166699) | Interactive 3D | 503K | Creator's prompt by [@noahwachnik](https://x.com/noahwachnik/status/2102470518506963119) |
@@ -215,7 +216,6 @@ Community lists that helped find posts: [yihui-dev/awesome-opus5-5-videos](https
 | [@kaolti](https://x.com/kaolti/status/2103887665305391343) | Interactive 3D | 114K | Starter prompt (ours) |
 | [@tommy_love123](https://x.com/tommy_love123/status/2103263710517350418) | Explainers | 112K | Starter prompt (ours) |
 | [@NFT_Chen](https://x.com/NFT_Chen/status/2102672063668670725) | Interactive 3D | 110K | Starter prompt (ours) |
-| [@rehan_shei](https://x.com/rehan_shei/status/2102794467032154206) | Films & music | 110K | Starter prompt (ours), made with [@majidmanzarpour's prompt](https://x.com/majidmanzarpour/status/2102476499387383834) |
 | [@LexnLin](https://x.com/LexnLin/status/2104148233106723099) | Launch videos | 82K | Starter prompt (ours) |
 | [@notdwd](https://x.com/notdwd/status/2104138101102621133) | Launch videos | 56K | Starter prompt (ours), [their long prompt](https://x.com/notdwd/status/2104138101102621133) |
 
